@@ -1,6 +1,7 @@
-import React from 'react'
-import invite from '../assets/images/Duck-form.png'
-import '../components/projectCard.css'
+import React from "react";
+import { DiHtml5, DiCss3 } from "react-icons/di";
+import { SiSass } from "react-icons/si";
+import "../components/projectCard.css";
 /**
  *
  * Create atleast 3 components, these components will represent your previous projects. Each component will include these props:
@@ -23,22 +24,48 @@ Your role (if it was collaborative)
 
 Challenges you solved
  */
-function projectCard() {
-  return (
-      <div className='project-container'>
-          <h2 className='project-title'>Name</h2>
-          <img className='project-image' src={invite} alt="project" />
-          <h4 className='project-repo'>Github repo</h4>
-          <h5 className='project-tech'>TechUsed</h5>
-          <p className='project-detail'>Description</p>
 
-       {/*    <h2>{Name}</h2>
+techIconMap = {
+  HTML: <DiHtml5 size="50px" />,
+  CSS: <DiCss3 size="50px" />,
+  SASS: <SiSass size="50px" />,
+};
+function projectCard(props) {
+  const techIcon = techIconMap[props.techUsed] || null;
+  return (
+    <>
+      <div className="project-container">
+        <div className="desc-container">
+          <h2 className="project-title">{props.projectName}</h2>
+          <a
+            className="project-repo"
+            href={props.repoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Github Repository
+          </a>
+          {techIcon}
+        </div>
+        <div className="desc-container">
+          <img
+            className="project-image"
+            src={props.image}
+            alt={props.imgAltText}
+          />
+        </div>
+        <div className="desc-container">
+          <p className="project-detail">{props.details}</p>
+        </div>
+      </div>
+
+      {/*    <h2>{Name}</h2>
           <img src={Screenshot} alt="project" />
           <h4>{GithubRepo}</h4>
           <h5>{TechUsed}</h5>
           <p>{Description }</p> */}
-    </div>
-  )
+    </>
+  );
 }
 
-export default projectCard
+export default projectCard;
