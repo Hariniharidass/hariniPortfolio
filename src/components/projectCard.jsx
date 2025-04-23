@@ -10,44 +10,56 @@ const techIconMap = {
 };
 
 function projectCard(props) {
-  const techIcons = props.techUsed
-    ? props.techUsed.map((tech, index) => (
-        <span key={index}> {techIconMap[tech] || null}</span>
-      ))
-    : [];
+  const techIcons = props.techUsed ? (
+    <div className="flex flex-row items-center m-2 p-1">
+      {props.techUsed.map((tech, index) => (
+        <span className="m-2 p-1" key={index}>
+          {techIconMap[tech] || null}
+        </span>
+      ))}
+    </div>
+  ) : null;
 
   return (
     <>
-      <div className="flex flex-row justify-center items-center m-4 p-2 rounded">
-        <div className="desc-container">
-          <h2 className="text-4xl font-bold">{props.projectName}</h2>
+      <div className="lg:flex lg:flex-row justify-center items-center m-3 p-2 rounded-2xl border-2 border-solid border-black shadow-md  md:flex-col md:justify-center md:items-center sm:flex-col sm:justify-center sm:items-center text-center">
+        <h2 className="text-4xl font-bold m-4 p-2 md:flex-col sm:flex-col md:max-w-full sm:max-w-full">
+          {props.projectName}
+        </h2>
+        <img
+          className="rounded-xl m-2 border-black-700 border-2 block mx-auto w-full max-w-sm sm:max-w-md lg:max-w-lg object-cover"
+          src={props.image}
+          alt={props.imgAltText}
+        />
+
+        <div className=" inline-flex text-xl flex-col justify-center items-center m-2 p-2 lg:w-1/2 w-full">
+          <span className="text-center sm:inline">Github Repository</span>
           <a
-            className="project-repo"
+            className=" m-2 p-4 hover:text-blue-500 md:flex-col sm:flex-col"
             href={props.repoLink}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Click <DiGithubBadge size="50px" /> for Github Repository
+            <DiGithubBadge
+              size="50px"
+              color="black"
+              className="mr-2 md:mr-4 mx-auto block"
+            />{" "}
+            {/* Center the icon */}
           </a>
-          <div className="project-tech">Tech Used : {techIcons}</div>
+
+          <span className="text-center sm:inline"> Tech Used</span>
+          <div className="flex flex-row items-center justify-center m-2 p-1 w-full">
+            {" "}
+            {/* Center icons in row */}
+            {techIcons}
+          </div>
         </div>
-        <div className="desc-container">
-          <img
-            className="project-image"
-            src={props.image}
-            alt={props.imgAltText}
-          />
-        </div>
-        <div className="desc-container">
-          <p className="project-detail">{props.details}</p>
+
+        <div className="flex-col justify-center items-center m-2 p-2 lg:w-1/3 w-full">
+          <p className="text-center text-2xl">{props.details}</p>
         </div>
       </div>
-
-      {/*    <h2>{Name}</h2>
-          <img src={Screenshot} alt="project" />
-          <h4>{GithubRepo}</h4>
-          <h5>{TechUsed}</h5>
-          <p>{Description }</p> */}
     </>
   );
 }
