@@ -19,10 +19,9 @@ function App() {
 
   const options = useMemo(
     () => ({
-      // Your particles configuration (adjust as desired)
       background: {
         color: {
-          value: "#0d47a1", // Your background color
+          value: "#0d47a1", //background color
         },
       },
       fpsLimit: 120,
@@ -98,7 +97,12 @@ function App() {
           projectName="Forms"
           repoLink="https://github.com/Hariniharidass/Html-forms"
           techUsed={["HTML", "CSS"]}
-          details="A simple HTML form with validation and flexbox"
+          description="The webpage layout from figma as a form is converted to a HTML and CSS code"
+          details={[
+            "Used HTML form elements and validations",
+            "Used with CSS attributes such as hover, focus",
+            "Used normalize.css",
+          ]}
           image={formImage}
           imgAltText="duck-form-image"
         />
@@ -106,7 +110,14 @@ function App() {
           projectName="CSS SVG Animations"
           repoLink="https://github.com/Hariniharidass/SVG-CSS-animation"
           techUsed={["HTML", "CSS"]}
-          details=" A birthday invitation card using CSS SVG animations "
+          description="This is a single page website for a birthday invitation"
+          details={[
+            "3 SVG images created (clock, envelope, house)",
+            "CSS animations with CSS transistion and @keyframe animation",
+            "Included Animate.css",
+            "Used normalize.css",
+            "Used Google Fonts ",
+          ]}
           image={cssSvgImage}
           imgAltText="css-svg-invitation"
         />
@@ -114,7 +125,14 @@ function App() {
           projectName="Responsive Navigation"
           repoLink="https://github.com/Hariniharidass/Responsive-navigation"
           techUsed={["HTML", "SASS"]}
-          details="A webpage for event organiser with different pages using responsive navigation"
+          description="A webpage for event organiser with different pages using responsive navigation."
+          details={[
+            "Used hamburger menu for navigation in small devices",
+            "All links on the page is accessible at all screen sizes",
+            "Implemented SASS",
+            "Modularised different components on the page for scalabilty",
+            "Used normalize.css",
+          ]}
           image={responsiveNavigation}
           imgAltText="responsive-navigation"
         />
