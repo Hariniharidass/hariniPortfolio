@@ -22,8 +22,8 @@ function projectCard(props) {
 
   return (
     <>
-      <div className="lg:flex lg:flex-row justify-center items-center m-3 p-2 rounded-2xl border-2 border-solid border-black shadow-md  md:flex-col md:justify-center md:items-center sm:flex-col sm:justify-center sm:items-center text-center">
-        <h2 className="text-4xl font-bold m-4 p-2 md:flex-col sm:flex-col md:max-w-full sm:max-w-full">
+      <div className="lg:flex lg:flex-row justify-center items-center m-3 p-2 rounded-2xl border-2 border-solid border-black shadow-md  md:flex-col md:justify-center md:items-center sm:flex-col sm:justify-center sm:items-center text-center text-white">
+        <h2 className="text-4xl font-bold m-4 p-2 md:flex-col sm:flex-col md:max-w-full sm:max-w-full lg:flex-grow">
           {props.projectName}
         </h2>
         <img
