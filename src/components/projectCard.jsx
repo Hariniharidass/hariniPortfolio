@@ -1,51 +1,35 @@
 import React from "react";
 import { DiHtml5, DiCss3 } from "react-icons/di";
-import { SiSass } from "react-icons/si";
+import { DiSass, DiGithubBadge } from "react-icons/di";
 import "../components/projectCard.css";
-/**
- *
- * Create atleast 3 components, these components will represent your previous projects. Each component will include these props:
 
-Name
-
-Screenshot
-
-Github repo
-
-Tech used
-
-A short write-up
-
-What the project does
-
-What you learned
-
-Your role (if it was collaborative)
-
-Challenges you solved
- */
-
-techIconMap = {
-  HTML: <DiHtml5 size="50px" />,
-  CSS: <DiCss3 size="50px" />,
-  SASS: <SiSass size="50px" />,
+const techIconMap = {
+  HTML: <DiHtml5 size="50px" color="#ff5733" />,
+  CSS: <DiCss3 size="50px" color="#2965f1" />,
+  SASS: <DiSass size="50px" color=" #CD6799" />,
 };
+
 function projectCard(props) {
-  const techIcon = techIconMap[props.techUsed] || null;
+  const techIcons = props.techUsed
+    ? props.techUsed.map((tech, index) => (
+        <span key={index}> {techIconMap[tech] || null}</span>
+      ))
+    : [];
+
   return (
     <>
-      <div className="project-container">
+      <div className="flex flex-row justify-center items-center m-4 p-2 rounded">
         <div className="desc-container">
-          <h2 className="project-title">{props.projectName}</h2>
+          <h2 className="text-4xl font-bold">{props.projectName}</h2>
           <a
             className="project-repo"
             href={props.repoLink}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Github Repository
+            Click <DiGithubBadge size="50px" /> for Github Repository
           </a>
-          {techIcon}
+          <div className="project-tech">Tech Used : {techIcons}</div>
         </div>
         <div className="desc-container">
           <img

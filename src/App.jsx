@@ -1,7 +1,4 @@
 import ProjectCard from "../src/components/projectCard.jsx";
-import "./App.css";
-import { DiHtml5, DiCss3 } from "react-icons/di";
-import { SiSass } from "react-icons/si";
 import formImage from "./assets/images/Duck-form.png";
 import cssSvgImage from "./assets/images/invitation.png";
 import responsiveNavigation from "./assets/images/responsiveNav.png";
@@ -11,7 +8,7 @@ function App() {
       <ProjectCard
         projectName="Forms"
         repoLink="https://github.com/Hariniharidass/Html-forms"
-        techUsed="HTML"
+        techUsed={["HTML", "CSS"]}
         details="A simple HTML form with validation and flexbox"
         image={formImage}
         imgAltText="duck-form-image"
@@ -19,7 +16,7 @@ function App() {
       <ProjectCard
         projectName="CSS SVG Animations"
         repoLink="https://github.com/Hariniharidass/SVG-CSS-animation"
-        techUsed="HTML,CSS"
+        techUsed={["HTML", "CSS"]}
         details=" A birthday inviation card using CSS SVG animations "
         image={cssSvgImage}
         imgAltText="css-svg-invitation"
@@ -27,7 +24,7 @@ function App() {
       <ProjectCard
         projectName="Responsive Navigation"
         repoLink="https://github.com/Hariniharidass/Responsive-navigation"
-        techUsed="HTML,SASS"
+        techUsed={["HTML", "SASS"]}
         details="A webpage for event organiser with different pages using responsive naigation"
         image={responsiveNavigation}
         imgAltText="responsive-navigation"
