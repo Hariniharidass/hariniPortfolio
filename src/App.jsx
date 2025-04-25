@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/navBar.jsx";
+import Navbar from "./components/NavBar.jsx";
 import Home from "./pages/home.jsx";
 import About from "./pages/about.jsx";
 import Projects from "./pages/projects.jsx";

@@ -8,7 +8,7 @@ const techIconMap = {
   SASS: <DiSass size="50px" color=" #CD6799" />,
 };
 
-function projectCard(props) {
+function ProjectCard(props) {
   const techIcons = props.techUsed ? (
     <div className="flex flex-row items-center m-2 p-1">
       {props.techUsed.map((tech, index) => (
@@ -66,4 +66,4 @@ function projectCard(props) {
   );
 }
 
-export default projectCard;
+export default ProjectCard;
