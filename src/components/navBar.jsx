@@ -8,22 +8,28 @@ function navBar() {
     setIsMenuDisplayed(!isMenuDisplayed);
   };
   return (
-    <div className="flex m-2 p-4 bg-white justify-between">
+    <div className="fixed z-100 border-2 flex mx-auto p-4 bg-gray-50 w-dvw justify-between">
       <div className="md:inline-flex items-center w-1/2">
-        <img src={logo} className="h-30 mr-2 border-2" alt="logo" />
-        <h2 className="text-2xl md:text-4xl">Harini Natarajan</h2>
+        <img src={logo} className="h-15 mr-2 border-2" alt="logo" />
+        <h2 className="text-xl md:text-4xl">Harini Natarajan</h2>
       </div>
-      <div className="flex justify-end items-center w-1/2">
+      <div className="flex justify-end items-center w-1/2 mr-8 ">
         <nav className={`${isMenuDisplayed ? "block" : "hidden"} md:block`}>
-          <ul className="md:inline-flex text-xl md:text-3xl flex-col md:flex-row items-end">
+          <ul className="md:inline-flex text-xl md:text-xl flex-col md:flex-row items-end">
             <li className="md:ml-8 mt-2 md:mt-0">
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={toggleMenu}>
+                Home
+              </Link>
             </li>
             <li className="md:ml-8 mt-2 md:mt-0">
-              <Link to="/projects">Projects</Link>
+              <Link to="/projects" onClick={toggleMenu}>
+                Projects
+              </Link>
             </li>
             <li className="md:ml-8 mt-2 md:mt-0">
-              <Link to="/about">About</Link>
+              <Link to="/about" onClick={toggleMenu}>
+                About
+              </Link>
             </li>
           </ul>
         </nav>

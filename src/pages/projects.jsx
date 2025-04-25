@@ -5,7 +5,7 @@ import cssSvgImage from "../assets/images/invitation.png";
 import responsiveNavigation from "../assets/images/responsiveNav.png";
 function projects() {
   return (
-    <div className="relative z-10 p-4 flex flex-col items-center">
+    <div className="relative z-10 p-4 flex flex-col items-center ">
       <button>Projects</button>
       <ProjectCard
         projectName="Forms"

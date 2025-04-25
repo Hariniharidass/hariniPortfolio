@@ -21,7 +21,7 @@ function App() {
     () => ({
       background: {
         color: {
-          value: "#0d47a1", //background color
+          value: "#F5F5F5", //background color
         },
       },
       fpsLimit: 120,
@@ -48,26 +48,33 @@ function App() {
       },
       particles: {
         number: {
-          value: 80,
+          value: 120,
         },
         color: {
-          value: "#ffffff",
+          value: [
+            "#FF00FF",
+            "#00FFFF",
+            "#FFFF00",
+            "#FF8000",
+            "#00FF80",
+            "#8000FF",
+          ],
         },
         shape: {
           type: "circle",
         },
         opacity: {
-          value: 0.5,
+          value: 0.7,
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: { min: 1, max: 9 },
         },
         links: {
-          enable: true,
+          enable: false,
           distance: 150,
           color: "#ffffff",
           opacity: 0.4,
-          width: 1,
+          width: 3,
         },
         move: {
           enable: true,
