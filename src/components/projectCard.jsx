@@ -1,7 +1,6 @@
 import React from "react";
 import { DiHtml5, DiCss3 } from "react-icons/di";
 import { DiSass, DiGithubBadge } from "react-icons/di";
-import "../components/projectCard.css";
 
 const techIconMap = {
   HTML: <DiHtml5 size="50px" color="#ff5733" />,
