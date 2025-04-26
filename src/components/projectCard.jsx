@@ -21,7 +21,7 @@ function ProjectCard(props) {
 
   return (
     <>
-      <div className="lg:flex lg:flex-row justify-center items-center w-full m-5 p-4 mt-4 border-b-4 border-white-600 shadow-md  md:flex-col md:justify-center md:items-center sm:flex-col sm:justify-center sm:items-center text-center text-black">
+      <div className="bg-gray-300 lg:flex lg:flex-row justify-center items-center w-full m-5 p-4 mt-4 border-b-4 border-white-600 shadow-md  md:flex-col md:justify-center md:items-center sm:flex-col sm:justify-center sm:items-center text-center text-black">
         <h2 className="text-4xl font-bold m-4 p-2 md:flex-col sm:flex-col md:max-w-full sm:max-w-full lg:flex-grow">
           {props.projectName}
         </h2>

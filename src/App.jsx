@@ -14,6 +14,7 @@ function App() {
       await loadSlim(engine);
     }).then(() => {
       setInit(true);
+      console.log("Particles engine initialized successfully!"); // Add this line
     });
   }, []);
 
@@ -21,68 +22,97 @@ function App() {
     () => ({
       background: {
         color: {
-          value: "#F5F5F5", //background color
-        },
-      },
-      fpsLimit: 120,
-      interactivity: {
-        events: {
-          onClick: {
-            enable: true,
-            mode: "push",
-          },
-          onHover: {
-            enable: true,
-            mode: "repulse",
-          },
-        },
-        modes: {
-          push: {
-            quantity: 4,
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4,
-          },
+          value: "#f0f0f0",
         },
       },
       particles: {
         number: {
-          value: 120,
+          value: 50,
         },
         color: {
-          value: [
-            "#FF00FF",
-            "#00FFFF",
-            "#FFFF00",
-            "#FF8000",
-            "#00FF80",
-            "#8000FF",
-          ],
+          value: "#333333",
         },
         shape: {
-          type: "circle",
+          type: "image",
+          options: {
+            image: [
+              {
+                src: "/images/html.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/images/css.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/images/js.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/images/tailwind.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/images/node.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/images/sass.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/images/mongodb.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/images/react.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/images/mysql.svg",
+                width: 32,
+                height: 32,
+              },
+            ],
+          },
         },
         opacity: {
-          value: 0.7,
+          value: 0.8,
         },
         size: {
-          value: { min: 1, max: 9 },
-        },
-        links: {
-          enable: false,
-          distance: 150,
-          color: "#ffffff",
-          opacity: 0.4,
-          width: 3,
+          value: 16,
         },
         move: {
           enable: true,
-          speed: 2,
-          direction: "none",
-          random: false,
+          speed: 1.5,
+          direction: "random",
+          random: true,
           straight: false,
           outModes: "bounce",
+        },
+        collisions: {
+          enable: true,
+          bounce: {
+            horizontal: {
+              enable: true,
+              factor: 0.1,
+            },
+            vertical: {
+              enable: true,
+              factor: 0.5,
+            },
+          },
+          overlap: {
+            enable: false,
+          },
         },
       },
       detectRetina: true,

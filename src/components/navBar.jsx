@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
-import logoDark from "../assets/images/logoDark.png";
 function NavBar() {
   const [isMenuDisplayed, setIsMenuDisplayed] = useState(false);
   const toggleMenu = () => {
