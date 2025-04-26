@@ -85,7 +85,7 @@ function App() {
           },
         },
         opacity: {
-          value: 0.8,
+          value: 0.4,
         },
         size: {
           value: 16,
