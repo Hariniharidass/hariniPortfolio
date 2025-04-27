@@ -53,10 +53,10 @@ function ProjectCard(props) {
         </div>
         <div className="flex-col justify-center items-center m-2 p-2 lg:w-1/3 w-full">
           <p className="text-center text-xl m-2 p-1 ">{props.description}</p>
-          <ul className="list-disc ">
+          <ul className="list-disc">
             {props.details.map((detail, index) => (
               <li
-                className="mx-auto text-m w-full flex flex-col justify-center items-center"
+                className=" mx-auto text-m text-left  w-full "
                 key={index}
               >
                 {detail}

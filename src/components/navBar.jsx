@@ -8,12 +8,12 @@ function NavBar() {
   };
   return (
     <header>
-      <nav className="flex items-center justify-between flex-wrap bg-gray-300 p-6">
+      <nav className="flex items-center justify-between flex-wrap bg-gray-300 px-4 h-25 pt-0 ">
         <div className="flex items-center flex-shrink-0 text-black mr-6">
           <Link to="/">
             <img
               src={logo}
-              className="fill-current h-13 w-13 mr-2"
+              className="fill-current h-10 w-13 mr-2"
               alt="logo"
             />
           </Link>
@@ -47,17 +47,17 @@ function NavBar() {
         >
           <div className="text-sm lg:flex-grow">
             <ul className="lg:flex lg:justify-end items-center">
-              <li className="block m-4 my-8 lg:inline-block lg:mt-0 text-black-200   hover:text-white  text-xl px-10 hover:bg-black hover:py-3 hover:rounded-3xl ">
+              <li className="block m-8 p-3 lg:inline-block  text-black-200   hover:text-white  text-xl  rounded-xl hover:bg-black    transition duration-100 ease-in-out">
                 <Link to="/" onClick={toggleMenu}>
                   Home
                 </Link>
               </li>
-              <li className="block m-4 my-8 lg:inline-block lg:mt-0 text-black-200 hover:text-white  text-xl px-10  hover:bg-black hover:py-3 hover:rounded-3xl">
+              <li className="block m-8 lg:inline-block text-black-200 hover:text-white  text-xl p-3 rounded-xl  hover:bg-black   transition duration-100 ease-in-out">
                 <Link to="/about" onClick={toggleMenu}>
                   About
                 </Link>
               </li>
-              <li className="block m-4 my-8 lg:inline-block lg:mt-0 text-black-200 hover:text-white  text-xl px-10  hover:bg-black hover:py-3 hover:rounded-3xl">
+              <li className="block m-8 p-3 lg:inline-block  text-black-200 hover:text-white  text-xl  rounded-xl  hover:bg-black   transition duration-100 ease-in-out">
                 <Link to="/projects" onClick={toggleMenu}>
                   Projects
                 </Link>
