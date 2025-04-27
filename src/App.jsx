@@ -2,10 +2,11 @@ import React, { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/NavBar.jsx";
+
 import Home from "./pages/home.jsx";
 import About from "./pages/about.jsx";
 import Projects from "./pages/projects.jsx";
+import Navbar from "./components/NavigationBar.jsx";
 function App() {
   const [init, setInit] = useState(false);
 
@@ -14,7 +15,6 @@ function App() {
       await loadSlim(engine);
     }).then(() => {
       setInit(true);
-      console.log("Particles engine initialized successfully!");
     });
   }, []);
 
@@ -111,7 +111,7 @@ function App() {
             },
           },
           overlap: {
-            enable: false,
+            enable: true,
           },
         },
       },

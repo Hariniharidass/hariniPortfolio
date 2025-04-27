@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProjectCard from "/src/components/ProjectCard.jsx";
+import ProjectCard from "/src/components/Card.jsx";
 import formImage from "../assets/images/Duck-form.png";
 import cssSvgImage from "../assets/images/invitation.png";
 import responsiveNavigation from "../assets/images/responsiveNav.png";
@@ -9,11 +9,11 @@ function projects() {
     setIsProjectsShown(!isProjectsShown);
   };
   return (
-    <div className="flex justify-center items-center flex-col">
+    <div className="mt-10 flex justify-center items-center flex-col">
       <button
         type="button"
         onClick={toggleButton}
-        className="text-black text-2xl rounded-2xl m-4 p-6 bg-white cursor-pointer border-4 border-black hover:bg-black hover:text-white"
+        className=" text-black text-2xl rounded-2xl m-4 p-6 bg-white cursor-pointer border-4 border-black hover:bg-black hover:text-white"
       >
         {" "}
         View Projects

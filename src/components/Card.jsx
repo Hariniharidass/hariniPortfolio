@@ -1,0 +1,82 @@
+import React, { useState } from "react";
+import { DiHtml5, DiCss3 } from "react-icons/di";
+import { DiSass, DiGithubBadge } from "react-icons/di";
+import { FaFolderOpen } from "react-icons/fa";
+
+const techIconMap = {
+  HTML: <DiHtml5 size="50px" color="#ff5733" />,
+  CSS: <DiCss3 size="50px" color="#2965f1" />,
+  SASS: <DiSass size="50px" color=" #CD6799" />,
+};
+
+function Card(props) {
+  const [isOpen, setIsOpen] = useState(false);
+  const techIcons = props.techUsed ? (
+    <div className="flex flex-row items-center m-2 p-1">
+      {props.techUsed.map((tech, index) => (
+        <span className="m-2 p-1" key={index}>
+          {techIconMap[tech] || null}
+        </span>
+      ))}
+    </div>
+  ) : null;
+  const openCard = () => {
+    setIsOpen(!isOpen);
+  };
+  return (
+    <>
+      <div className=" inline-flex text-left justify-center items-center">
+        <h2 className="text-4xl font-bold m-4 p-2 md:flex-col sm:flex-col md:max-w-full sm:max-w-full lg:flex-grow">
+          {props.projectName}
+        </h2>
+        <FaFolderOpen
+          size="50px"
+          className="cursor-pointer"
+          onClick={openCard}
+        />
+      </div>
+      <div className={` ${isOpen ? "block" : "hidden"}`}>
+        <div className="bg-gray-300 lg:flex lg:flex-row justify-center items-center w-full m-5 p-4 mt-4 border-b-4 border-white-600 shadow-md  md:flex-col md:justify-center md:items-center sm:flex-col sm:justify-center sm:items-center text-center text-black">
+          <img
+            className="rounded-xl m-2 border-black-700 border-2 block mx-auto w-full max-w-sm sm:max-w-md lg:max-w-lg object-cover"
+            src={props.image}
+            alt={props.imgAltText}
+          />
+
+          <div className=" inline-flex text-xl flex-col justify-center items-center m-2 p-2 lg:w-1/2 w-full">
+            <span className="text-center sm:inline">Github Repository</span>
+            <a
+              className=" m-2 p-4 hover:text-blue-500 md:flex-col sm:flex-col"
+              href={props.repoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <DiGithubBadge
+                size="50px"
+                color="black"
+                className="mr-2 md:mr-4 mx-auto block"
+              />
+            </a>
+
+            <span className="text-center sm:inline"> Tech Used</span>
+            <div className="flex flex-row items-center justify-center m-2 p-1 w-full">
+              {techIcons}
+            </div>
+          </div>
+          <div className="flex-col justify-center items-center m-2 p-2 lg:w-1/3 w-full">
+            <p className="text-center text-xl m-2 p-1 ">{props.description}</p>
+            <ul className="list-disc">
+              {props.details.map((detail, index) => (
+                <li className=" mx-auto text-m text-left  w-full " key={index}>
+                  {detail}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Card;
