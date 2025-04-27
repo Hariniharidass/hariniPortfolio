@@ -14,7 +14,7 @@ function App() {
       await loadSlim(engine);
     }).then(() => {
       setInit(true);
-      console.log("Particles engine initialized successfully!"); // Add this line
+      console.log("Particles engine initialized successfully!");
     });
   }, []);
 

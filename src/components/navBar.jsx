@@ -47,17 +47,17 @@ function NavBar() {
         >
           <div className="text-sm lg:flex-grow">
             <ul className="lg:flex lg:justify-end items-center">
-              <li className="block mt-4 lg:inline-block lg:mt-0 text-black-200   hover:text-white  text-xl px-10 hover:bg-black hover:py-3 hover:rounded-3xl ">
+              <li className="block m-4 my-8 lg:inline-block lg:mt-0 text-black-200   hover:text-white  text-xl px-10 hover:bg-black hover:py-3 hover:rounded-3xl ">
                 <Link to="/" onClick={toggleMenu}>
                   Home
                 </Link>
               </li>
-              <li className="block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-white  text-xl px-10  hover:bg-black hover:py-3 hover:rounded-3xl">
+              <li className="block m-4 my-8 lg:inline-block lg:mt-0 text-black-200 hover:text-white  text-xl px-10  hover:bg-black hover:py-3 hover:rounded-3xl">
                 <Link to="/about" onClick={toggleMenu}>
                   About
                 </Link>
               </li>
-              <li className="block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-white  text-xl px-10  hover:bg-black hover:py-3 hover:rounded-3xl">
+              <li className="block m-4 my-8 lg:inline-block lg:mt-0 text-black-200 hover:text-white  text-xl px-10  hover:bg-black hover:py-3 hover:rounded-3xl">
                 <Link to="/projects" onClick={toggleMenu}>
                   Projects
                 </Link>
