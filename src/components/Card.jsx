@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { DiHtml5, DiCss3 } from "react-icons/di";
 import { DiSass, DiGithubBadge } from "react-icons/di";
 import { FaFolderOpen } from "react-icons/fa";
+import { FaFolderMinus } from "react-icons/fa";
+import { FaFolderClosed } from "react-icons/fa6";
 
 const techIconMap = {
   HTML: <DiHtml5 size="50px" color="#ff5733" />,
@@ -31,7 +33,12 @@ function Card(props) {
         </h2>
         <FaFolderOpen
           size="50px"
-          className="cursor-pointer"
+          className={` ${isOpen ? "block" : "hidden"} cursor-pointer`}
+          onClick={openCard}
+        />
+        <FaFolderClosed
+          size="50px"
+          className={` ${isOpen ? "hidden" : "block"} cursor-pointer`}
           onClick={openCard}
         />
       </div>

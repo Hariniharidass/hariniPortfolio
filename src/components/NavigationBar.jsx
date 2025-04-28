@@ -46,19 +46,31 @@ function NavBar() {
           }`}
         >
           <div className="text-sm lg:flex-grow">
-            <ul className="lg:flex lg:justify-end lg:items-center">
-              <li className="block my-1.5 mx-2 p-3 lg:inline-block  text-black-200   hover:text-white  text-xl  rounded-xl hover:bg-black    transition duration-100 ease-in-out">
-                <Link to="/" onClick={toggleMenu}>
+            <ul className="lg:flex lg:justify-end lg:gap-10 lg:items-center">
+              <li className="lg:inline-block  text-black-200   hover:text-white  text-xl  rounded-xl hover:bg-black    transition duration-100 ease-in-out">
+                <Link
+                  to="/"
+                  onClick={toggleMenu}
+                  className=" block my-1 mx-2 p-1 "
+                >
                   Home
                 </Link>
               </li>
-              <li className="block my-1.5 mx-2 p-3 lg:inline-block  text-black-200 hover:text-white  text-xl  rounded-xl  hover:bg-black   transition duration-100 ease-in-out">
-                <Link to="/about" onClick={toggleMenu}>
+              <li className=" lg:inline-block  text-black-200 hover:text-white  text-xl  rounded-xl  hover:bg-black   transition duration-100 ease-in-out">
+                <Link
+                  to="/about"
+                  onClick={toggleMenu}
+                  className=" block my-1 mx-2 p-1 "
+                >
                   About
                 </Link>
               </li>
-              <li className="block my-1.5 mx-2 p-3 lg:inline-block  text-black-200 hover:text-white  text-xl  rounded-xl  hover:bg-black   transition duration-100 ease-in-out">
-                <Link to="/projects" onClick={toggleMenu}>
+              <li className=" lg:inline-block  text-black-200 hover:text-white  text-xl  rounded-xl  hover:bg-black   transition duration-100 ease-in-out">
+                <Link
+                  to="/projects"
+                  onClick={toggleMenu}
+                  className="block my-1 mx-2 p-1 "
+                >
                   Projects
                 </Link>
               </li>
