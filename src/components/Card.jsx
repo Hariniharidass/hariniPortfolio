@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { DiHtml5, DiCss3 } from "react-icons/di";
 import { DiSass, DiGithubBadge } from "react-icons/di";
 import { FaFolderOpen } from "react-icons/fa";
-import { FaFolderMinus } from "react-icons/fa";
 import { FaFolderClosed } from "react-icons/fa6";
-
+import PopUp from "../components/PopUp";
 const techIconMap = {
   HTML: <DiHtml5 size="50px" color="#ff5733" />,
   CSS: <DiCss3 size="50px" color="#2965f1" />,
@@ -13,6 +12,11 @@ const techIconMap = {
 
 function Card(props) {
   const [isOpen, setIsOpen] = useState(false);
+  const [popUpInfo, setPopUpInfo] = useState({
+    projectName: props.projectName,
+    repoLink: props.repoLink,
+    video: props.video,
+  });
   const techIcons = props.techUsed ? (
     <div className="flex flex-row items-center m-2 p-1">
       {props.techUsed.map((tech, index) => (
@@ -22,8 +26,13 @@ function Card(props) {
       ))}
     </div>
   ) : null;
+
   const openCard = () => {
     setIsOpen(!isOpen);
+  };
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+  const closePopUp = () => {
+    setIsPopUpOpen(false);
   };
   return (
     <>
@@ -49,7 +58,17 @@ function Card(props) {
             src={props.image}
             alt={props.imgAltText}
           />
-
+          <button type="button" onClick={() => setIsPopUpOpen(true)}>
+            Open Demo
+          </button>
+          {isPopUpOpen && (
+            <PopUp
+              projectName={popUpInfo.projectName}
+              repoLink={popUpInfo.repoLink}
+              video={popUpInfo.video}
+              onClick={closePopUp}
+            />
+          )}
           <div className=" inline-flex text-xl flex-col justify-center items-center m-2 p-2 lg:w-1/2 w-full">
             <span className="text-center sm:inline">Github Repository</span>
             <a

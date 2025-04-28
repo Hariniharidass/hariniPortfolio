@@ -7,6 +7,8 @@ import Home from "./pages/home.jsx";
 import About from "./pages/about.jsx";
 import Projects from "./pages/projects.jsx";
 import Navbar from "./components/NavigationBar.jsx";
+
+
 function App() {
   const [init, setInit] = useState(false);
 

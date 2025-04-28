@@ -3,6 +3,10 @@ import ProjectCard from "/src/components/Card.jsx";
 import formImage from "../assets/images/Duck-form.png";
 import cssSvgImage from "../assets/images/invitation.png";
 import responsiveNavigation from "../assets/images/responsiveNav.png";
+import invite from "../assets/videos/bdInvite.mp4";
+import form from "../assets/videos/form.mp4";
+import party from "../assets/videos/party.mp4";
+
 function projects() {
   const [isProjectsShown, setIsProjectsShown] = useState(false);
   const toggleButton = () => {
@@ -10,6 +14,7 @@ function projects() {
   };
   return (
     <div className="mt-10 flex justify-center items-center flex-col">
+      
       <button
         type="button"
         onClick={toggleButton}
@@ -35,6 +40,7 @@ function projects() {
           ]}
           image={formImage}
           imgAltText="duck-form-image"
+          video={form}
         />
         <ProjectCard
           projectName="CSS SVG Animations"
@@ -50,6 +56,7 @@ function projects() {
           ]}
           image={cssSvgImage}
           imgAltText="css-svg-invitation"
+          video={invite}
         />
         <ProjectCard
           projectName="Responsive Navigation"
@@ -65,6 +72,7 @@ function projects() {
           ]}
           image={responsiveNavigation}
           imgAltText="responsive-navigation"
+          video={party}
         />
       </div>
     </div>
