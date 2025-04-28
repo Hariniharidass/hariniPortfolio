@@ -12,8 +12,11 @@ const techIconMap = {
 
 function Card(props) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isPopUpVisible, setIsPopUpVisible] = useState(false);
+
   const [popUpInfo, setPopUpInfo] = useState({
-    projectName: props.projectName,
+    description: props.description,
     repoLink: props.repoLink,
     video: props.video,
   });
@@ -30,45 +33,76 @@ function Card(props) {
   const openCard = () => {
     setIsOpen(!isOpen);
   };
-  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
-  const closePopUp = () => {
-    setIsPopUpOpen(false);
+  const openPopUp = () => {
+    setIsPopUpVisible(true);
+    props.onPopUpOpen();
   };
+
+  const closePopUp = () => {
+    setIsPopUpVisible(false);
+    props.onPopUpClose();
+  };
+
   return (
-    <>
-      <div className=" inline-flex text-left justify-center items-center">
-        <h2 className="text-4xl font-bold m-4 p-2 md:flex-col sm:flex-col md:max-w-full sm:max-w-full lg:flex-grow">
+    <div className="m-3">
+      <div className="flex flex-row sm:inline-flex justify-start items-center">
+        <h2
+          className="font-bold
+          m-4
+          p-2
+          flex-row
+          lg:flex-col
+          md:max-w-full
+          md:text-2xl
+          sm:max-w-full
+          lg:flex-grow
+          text-xl"
+        >
           {props.projectName}
         </h2>
+
         <FaFolderOpen
           size="50px"
-          className={` ${isOpen ? "block" : "hidden"} cursor-pointer`}
+          className={`${
+            isOpen ? "inline-flex" : "hidden"
+          } cursor-pointer  md:mr-10 mr-3`}
           onClick={openCard}
         />
         <FaFolderClosed
           size="50px"
-          className={` ${isOpen ? "hidden" : "block"} cursor-pointer`}
+          className={` ${
+            isOpen ? "hidden" : "inline-flex"
+          } cursor-pointer  md:mr-10 mr-3`}
           onClick={openCard}
         />
+
+        <button
+          type="button"
+          className={` ${
+            isPopUpVisible ? "hidden" : "inline-flex"
+          } cursor-pointer border-1 ml-6 p-3 bg-white text-black rounded hover:bg-black hover:text-white`}
+          onClick={openPopUp}
+        >
+          Open Demo
+        </button>
+
+        {isPopUpVisible && (
+          <PopUp
+            description={popUpInfo.description}
+            repoLink={popUpInfo.repoLink}
+            video={popUpInfo.video}
+            onClick={closePopUp}
+          />
+        )}
       </div>
-      <div className={` ${isOpen ? "block" : "hidden"}`}>
-        <div className="bg-gray-300 lg:flex lg:flex-row justify-center items-center w-full m-5 p-4 mt-4 border-b-4 border-white-600 shadow-md  md:flex-col md:justify-center md:items-center sm:flex-col sm:justify-center sm:items-center text-center text-black">
+      <div className={` ${isOpen ? "block" : "hidden"} m-3 w-dvw`}>
+        <div className="bg-gray-300 lg:flex lg:flex-row justify-center items-center  p-4 mt-4 border-white-600 shadow-md  md:flex-col md:justify-center md:items-center sm:flex-col sm:justify-center sm:items-center text-center text-black">
           <img
-            className="rounded-xl m-2 border-black-700 border-2 block mx-auto w-full max-w-sm sm:max-w-md lg:max-w-lg object-cover"
+            className="rounded-xl m-2 block mx-auto w-full max-w-sm sm:max-w-md lg:max-w-lg object-cover"
             src={props.image}
             alt={props.imgAltText}
           />
-          <button type="button" onClick={() => setIsPopUpOpen(true)}>
-            Open Demo
-          </button>
-          {isPopUpOpen && (
-            <PopUp
-              projectName={popUpInfo.projectName}
-              repoLink={popUpInfo.repoLink}
-              video={popUpInfo.video}
-              onClick={closePopUp}
-            />
-          )}
+
           <div className=" inline-flex text-xl flex-col justify-center items-center m-2 p-2 lg:w-1/2 w-full">
             <span className="text-center sm:inline">Github Repository</span>
             <a
@@ -89,7 +123,8 @@ function Card(props) {
               {techIcons}
             </div>
           </div>
-          <div className="flex-col justify-center items-center m-2 p-2 lg:w-1/3 w-full">
+          <div className="flex-col justify-center items-center m-2 p-2 lg:w-2/3 w-full">
+            <p className="font-bold text-center text-2xl">Description </p>
             <p className="text-center text-xl m-2 p-1 ">{props.description}</p>
             <ul className="list-disc">
               {props.details.map((detail, index) => (
@@ -101,7 +136,7 @@ function Card(props) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

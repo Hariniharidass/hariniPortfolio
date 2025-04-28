@@ -6,25 +6,34 @@ import responsiveNavigation from "../assets/images/responsiveNav.png";
 import invite from "../assets/videos/bdInvite.mp4";
 import form from "../assets/videos/form.mp4";
 import party from "../assets/videos/party.mp4";
-
+import card from "../components/Card";
 function projects() {
   const [isProjectsShown, setIsProjectsShown] = useState(false);
+  const [isAnyPopUpOpen, setIsAnyPopUpOpen] = useState(false);
+
   const toggleButton = () => {
     setIsProjectsShown(!isProjectsShown);
   };
+  const handlePopUpOpen = () => {
+    setIsAnyPopUpOpen(true);
+  };
+  const handlePopUpClose = () => {
+    setIsAnyPopUpOpen(false);
+  };
+
   return (
     <div className="mt-10 flex justify-center items-center flex-col">
-      
       <button
         type="button"
         onClick={toggleButton}
-        className=" text-black text-2xl rounded-2xl m-4 p-6 bg-white cursor-pointer border-4 border-black hover:bg-black hover:text-white"
+        className="text-black text-2xl rounded-2xl m-4 p-6 bg-white cursor-pointer border-4 border-black hover:bg-black hover:text-white "
+        style={{ display: isAnyPopUpOpen ? "none" : "block" }}
       >
         {" "}
         View Projects
       </button>
       <div
-        className={`relative z-10 p-4 flex flex-col items-center  ${
+        className={`relative z-10 p-4 flex flex-col items-center ${
           isProjectsShown ? "flex" : "hidden"
         }`}
       >
@@ -41,6 +50,8 @@ function projects() {
           image={formImage}
           imgAltText="duck-form-image"
           video={form}
+          onPopUpOpen={handlePopUpOpen}
+          onPopUpClose={handlePopUpClose}
         />
         <ProjectCard
           projectName="CSS SVG Animations"
@@ -57,11 +68,13 @@ function projects() {
           image={cssSvgImage}
           imgAltText="css-svg-invitation"
           video={invite}
+          onPopUpOpen={handlePopUpOpen}
+          onPopUpClose={handlePopUpClose}
         />
         <ProjectCard
           projectName="Responsive Navigation"
           repoLink="https://github.com/Hariniharidass/Responsive-navigation"
-          techUsed={["HTML", "SASS"]}
+          techUsed={["HTML", "CSS", "SASS"]}
           description="A webpage for event organiser with different pages using responsive navigation."
           details={[
             "Used hamburger menu for navigation in small devices",
@@ -73,6 +86,8 @@ function projects() {
           image={responsiveNavigation}
           imgAltText="responsive-navigation"
           video={party}
+          onPopUpOpen={handlePopUpOpen}
+          onPopUpClose={handlePopUpClose}
         />
       </div>
     </div>
