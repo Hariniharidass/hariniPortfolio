@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+* {
+    font-family: "EB Garamond",
+        serif;
+}
