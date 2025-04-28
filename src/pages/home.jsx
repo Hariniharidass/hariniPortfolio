@@ -12,13 +12,18 @@ function home() {
       <h5 className="my-10 py- 8 text-3xl text-center ">
         Frontend developer based in Lund, Sweden
       </h5>
-      <button
-        type="button"
-        className="text-2xl border-2 border-black hover:bg-black hover:text-white rounded-2xl w-1/6 h-15"
+
+      <a
+        className="text-2xl border-black hover:bg-black hover:text-white rounded-2xl w-1/6 h-15"
+        href="mailto:hello2harinihari@gmail.com"
       >
-        {" "}
-        Mail me!
-      </button>
+        <button
+          className="border-2 border-black hover:bg-black hover:text-white rounded-2xl w-full h-15"
+          type="button"
+        >
+          Mail me!
+        </button>
+      </a>
     </div>
   );
 }
