@@ -6,7 +6,8 @@ import responsiveNavigation from "../assets/images/responsiveNav.png";
 import invite from "../assets/videos/bdInvite.mp4";
 import form from "../assets/videos/form.mp4";
 import party from "../assets/videos/party.mp4";
-import card from "../components/Card";
+import Search from "../components/Search";
+
 function projects() {
   const [isProjectsShown, setIsProjectsShown] = useState(false);
   const [isAnyPopUpOpen, setIsAnyPopUpOpen] = useState(false);
@@ -23,6 +24,7 @@ function projects() {
 
   return (
     <div className="mt-10 flex justify-center items-center flex-col">
+      <Search />
       <button
         type="button"
         onClick={toggleButton}
@@ -30,7 +32,7 @@ function projects() {
         style={{ display: isAnyPopUpOpen ? "none" : "block" }}
       >
         {" "}
-        View Projects
+        View All Projects
       </button>
       <div
         className={`relative z-10 p-4 flex flex-col items-center ${
