@@ -45,47 +45,42 @@ function Card(props) {
 
   return (
     <div className="m-3">
-      <div className="flex flex-row sm:inline-flex justify-start items-center">
+      <div className="flex flex-col items-center ">
         <h2
           className="font-bold
           m-4
-          p-2
-          flex-row
-          lg:flex-col
-          md:max-w-full
+          p-2 text-center
           md:text-2xl
-          sm:max-w-full
-          lg:flex-grow
           text-xl"
         >
           {props.projectName}
         </h2>
+        <div className="flex flex-row items-center justify-center m-2">
+          <FaFolderOpen
+            size="50px"
+            className={`${
+              isOpen ? "inline-flex" : "hidden"
+            } cursor-pointer   mr-3`}
+            onClick={openCard}
+          />
+          <FaFolderClosed
+            size="50px"
+            className={` ${
+              isOpen ? "hidden" : "inline-flex"
+            } cursor-pointer  mr-3`}
+            onClick={openCard}
+          />
 
-        <FaFolderOpen
-          size="50px"
-          className={`${
-            isOpen ? "inline-flex" : "hidden"
-          } cursor-pointer  md:mr-10 mr-3`}
-          onClick={openCard}
-        />
-        <FaFolderClosed
-          size="50px"
-          className={` ${
-            isOpen ? "hidden" : "inline-flex"
-          } cursor-pointer  md:mr-10 mr-3`}
-          onClick={openCard}
-        />
-
-        <button
-          type="button"
-          className={` ${
-            isPopUpVisible ? "hidden" : "inline-flex"
-          } cursor-pointer border-1 ml-6 p-3 bg-white text-black rounded hover:bg-black hover:text-white`}
-          onClick={openPopUp}
-        >
-          Open Demo
-        </button>
-
+          <button
+            type="button"
+            className={` ${
+              isPopUpVisible ? "hidden" : "inline-flex"
+            } cursor-pointer border-1  p-2 bg-white text-black rounded hover:bg-black hover:text-white`}
+            onClick={openPopUp}
+          >
+            Open Demo
+          </button>
+        </div>
         {isPopUpVisible && (
           <PopUp
             description={popUpInfo.description}

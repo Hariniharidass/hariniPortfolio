@@ -21,10 +21,65 @@ function projects() {
   const handlePopUpClose = () => {
     setIsAnyPopUpOpen(false);
   };
-
+  const projectsArray = [
+    {
+      projectName: "Forms",
+      repoLink: "https://github.com/Hariniharidass/Html-forms",
+      techUsed: ["HTML", "CSS"],
+      description:
+        "The webpage layout from figma as a form is converted to a HTML and CSS code",
+      details: [
+        "Used HTML form elements and validations",
+        "Used with CSS attributes such as hover, focus",
+        "Used normalize.css",
+      ],
+      image: formImage,
+      imgAltText: "duck-form-image",
+      video: form,
+      onPopUpOpen: handlePopUpOpen,
+      onPopUpClose: handlePopUpClose,
+    },
+    {
+      projectName: "CSS SVG Animations",
+      repoLink: "https://github.com/Hariniharidass/SVG-CSS-animation",
+      techUsed: ["HTML", "CSS"],
+      description: "This is a single page website for a birthday invitation",
+      details: [
+        "3 SVG images created (clock, envelope, house)",
+        "CSS animations with CSS transistion and @keyframe animation",
+        "Included Animate.css",
+        "Used normalize.css",
+        "Used Google Fonts ",
+      ],
+      image: cssSvgImage,
+      imgAltText: "css-svg-invitation",
+      video: invite,
+      onPopUpOpen: handlePopUpOpen,
+      onPopUpClose: handlePopUpClose,
+    },
+    {
+      projectName: "Responsive Navigation",
+      repoLink: "https://github.com/Hariniharidass/Responsive-navigation",
+      techUsed: ["HTML", "CSS", "SASS"],
+      description:
+        "A webpage for event organiser with different pages using responsive navigation.",
+      details: [
+        "Used hamburger menu for navigation in small devices",
+        "All links on the page is accessible at all screen sizes",
+        "Implemented SASS",
+        "Modularised different components on the page for scalabilty",
+        "Used normalize.css",
+      ],
+      image: responsiveNavigation,
+      imgAltText: "responsive-navigation",
+      video: party,
+      onPopUpOpen: handlePopUpOpen,
+      onPopUpClose: handlePopUpClose,
+    },
+  ];
   return (
     <div className="mt-10 flex justify-center items-center flex-col">
-      <Search />
+      <Search props={projectsArray} />
       <button
         type="button"
         onClick={toggleButton}
@@ -35,62 +90,25 @@ function projects() {
         View All Projects
       </button>
       <div
-        className={`relative z-10 p-4 flex flex-col items-center ${
-          isProjectsShown ? "flex" : "hidden"
+        className={`relative z-10 p-4  ${
+          isProjectsShown ? "flex flex-wrap gap-6 justify-center" : "hidden"
         }`}
       >
-        <ProjectCard
-          projectName="Forms"
-          repoLink="https://github.com/Hariniharidass/Html-forms"
-          techUsed={["HTML", "CSS"]}
-          description="The webpage layout from figma as a form is converted to a HTML and CSS code"
-          details={[
-            "Used HTML form elements and validations",
-            "Used with CSS attributes such as hover, focus",
-            "Used normalize.css",
-          ]}
-          image={formImage}
-          imgAltText="duck-form-image"
-          video={form}
-          onPopUpOpen={handlePopUpOpen}
-          onPopUpClose={handlePopUpClose}
-        />
-        <ProjectCard
-          projectName="CSS SVG Animations"
-          repoLink="https://github.com/Hariniharidass/SVG-CSS-animation"
-          techUsed={["HTML", "CSS"]}
-          description="This is a single page website for a birthday invitation"
-          details={[
-            "3 SVG images created (clock, envelope, house)",
-            "CSS animations with CSS transistion and @keyframe animation",
-            "Included Animate.css",
-            "Used normalize.css",
-            "Used Google Fonts ",
-          ]}
-          image={cssSvgImage}
-          imgAltText="css-svg-invitation"
-          video={invite}
-          onPopUpOpen={handlePopUpOpen}
-          onPopUpClose={handlePopUpClose}
-        />
-        <ProjectCard
-          projectName="Responsive Navigation"
-          repoLink="https://github.com/Hariniharidass/Responsive-navigation"
-          techUsed={["HTML", "CSS", "SASS"]}
-          description="A webpage for event organiser with different pages using responsive navigation."
-          details={[
-            "Used hamburger menu for navigation in small devices",
-            "All links on the page is accessible at all screen sizes",
-            "Implemented SASS",
-            "Modularised different components on the page for scalabilty",
-            "Used normalize.css",
-          ]}
-          image={responsiveNavigation}
-          imgAltText="responsive-navigation"
-          video={party}
-          onPopUpOpen={handlePopUpOpen}
-          onPopUpClose={handlePopUpClose}
-        />
+        {projectsArray.map((project, index) => (
+          <ProjectCard
+            key={index}
+            projectName={project.projectName}
+            repoLink={project.repoLink}
+            techUsed={project.techUsed}
+            description={project.description}
+            details={project.details}
+            image={project.image}
+            imgAltText={project.imgAltText}
+            video={project.video}
+            onPopUpOpen={project.onPopUpOpen}
+            onPopUpClose={project.onPopUpClose}
+          />
+        ))}
       </div>
     </div>
   );
