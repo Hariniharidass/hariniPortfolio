@@ -9,8 +9,7 @@ function about() {
       </p>
       <ol>
         <li className="list-disc my-3 text-2xl">
-          Practical experience developing a full-stack web application for
-          auction services.
+          Practical experience developing a full-stack web application.
         </li>
         <li className="list-disc my-3 text-2xl">
           Master's thesis at Axis Communications focused on web performance
@@ -31,7 +30,7 @@ function about() {
           APIs.
         </li>
         <li className="list-disc my-3 text-2xl">
-          Driven to contribute effectively to development teams.
+          Driven to contribute effectively and collaborate within teams.
         </li>
       </ol>
     </div>

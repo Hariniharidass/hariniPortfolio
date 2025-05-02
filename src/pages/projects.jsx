@@ -21,7 +21,8 @@ function projects() {
   const handlePopUpClose = () => {
     setIsAnyPopUpOpen(false);
   };
-  const projectsArray = [
+
+  const initialProjectsArray = [
     {
       projectName: "Forms",
       repoLink: "https://github.com/Hariniharidass/Html-forms",
@@ -77,9 +78,17 @@ function projects() {
       onPopUpClose: handlePopUpClose,
     },
   ];
+
+  const [filteredProjects, setFilteredProjects] =
+    useState(initialProjectsArray);
+  const handleSearch = (results) => {
+    setFilteredProjects(results);
+    setIsProjectsShown(true);
+  };
+
   return (
     <div className="mt-10 flex justify-center items-center flex-col">
-      <Search props={projectsArray} />
+      <Search projects={initialProjectsArray} onSearch={handleSearch} />
       <button
         type="button"
         onClick={toggleButton}
@@ -94,7 +103,7 @@ function projects() {
           isProjectsShown ? "flex flex-wrap gap-6 justify-center" : "hidden"
         }`}
       >
-        {projectsArray.map((project, index) => (
+        {filteredProjects.map((project, index) => (
           <ProjectCard
             key={index}
             projectName={project.projectName}
