@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 
 function Search({ projects, onSearch }) {
+  
   const searchInputRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -9,7 +10,7 @@ function Search({ projects, onSearch }) {
     setSearchTerm(value);
     handleSearch(value);
   };
-  
+
 // Search by Project Name
   const handleSearch = (searchValue) => {
     if (projects && Array.isArray(projects)) {
@@ -25,6 +26,8 @@ function Search({ projects, onSearch }) {
       handleSearch(searchInputRef.current.value);
     }
   }
+
+  // Search based on tags
   const handleTagSearch = (tag) => {
     if (projects && Array.isArray(projects)) {
       const filteredProjects = projects.filter((project) =>

@@ -81,6 +81,8 @@ function projects() {
 
   const [filteredProjects, setFilteredProjects] =
     useState(initialProjectsArray);
+
+  //To handle search results and display projects
   const handleSearch = (results) => {
     setFilteredProjects(results);
     setIsProjectsShown(true);
