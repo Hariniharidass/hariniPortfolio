@@ -1,28 +1,27 @@
-import React from "react";
-
+import Button from "../components/CustomButton";
+import myImage from "../../public/images/me.jpg";
 function home() {
   return (
-    <div className="text-black mt-20 flex flex-col justify-center items-center">
-      <h3 className="my-6 py- 8 text-2xl text-center ">
-        Hi! Welcome to my portfolio webpage!
-      </h3>
-      <h5 className="my-20 py- 8 text-3xl text-center ">
-        I'm <span className="text-5xl">Harini Natarajan</span>
+    <div className="text-black mt-5 flex flex-col justify-center items-center">
+      <img
+        width="150"
+        height="350"
+        className=" md:w-65 md:h-80 rounded-full"
+        src={myImage}
+        alt="Harini-picture"
+      />
+      <h5 className="md:my-6 my-3 md:py-3 md:text-3xl text-2xl text-center ">
+        I'm <span className="md:text-5xl text-2xl ">Harini Natarajan</span>
       </h5>
-      <h5 className="my-10 py- 8 text-3xl text-center ">
+      <h5 className=" md:py-4 my-1 md:text-3xl text-lg text-center ">
         Frontend developer based in Lund, Sweden
       </h5>
 
       <a
-        className="text-2xl border-black hover:bg-black hover:text-white rounded-2xl w-1/6 h-15"
+        className="md:text-2xl text-lg border-black hover:bg-black hover:text-white rounded-2xl md:w-2/6 md:h-25 w-1/6 h-20"
         href="mailto:hello2harinihari@gmail.com"
       >
-        <button
-          className="border-2 border-black hover:bg-black hover:text-white rounded-2xl w-full h-15"
-          type="button"
-        >
-          Mail me!
-        </button>
+        <Button name="Hire me !" />
       </a>
     </div>
   );
