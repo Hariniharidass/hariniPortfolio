@@ -1,11 +1,18 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState,  useEffect } from "react";
+import { Link,useLocation } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 function NavBar() {
   const [isMenuDisplayed, setIsMenuDisplayed] = useState(false);
+  const [activeLink, setActiveLink] = useState(null);
+  const location = useLocation();
   const toggleMenu = () => {
     setIsMenuDisplayed(!isMenuDisplayed);
   };
+  useEffect(() => {
+    setActiveLink(location.pathname);
+    setIsMenuDisplayed(false);
+  }, [location]);
+
   return (
     <header>
       <nav className="flex items-center justify-between flex-wrap bg-gray-300 px-3 py-2 min-h-[60px] lg:min-h-fit">
@@ -47,7 +54,11 @@ function NavBar() {
         >
           <div className="text-sm lg:flex-grow">
             <ul className="lg:flex lg:justify-end lg:gap-10 lg:items-center">
-              <li className="lg:inline-block  text-black-200   hover:text-white  text-xl  rounded-xl hover:bg-black    transition duration-100 ease-in-out">
+              <li
+                className={`lg:inline-block  text-black-200   hover:text-white  text-xl  rounded-xl hover:bg-black    transition duration-100 ease-in-out ${
+                  activeLink === "/" ? "bg-black text-white" : ""
+                }`}
+              >
                 <Link
                   to="/"
                   onClick={toggleMenu}
@@ -56,7 +67,12 @@ function NavBar() {
                   Home
                 </Link>
               </li>
-              <li className=" lg:inline-block  text-black-200 hover:text-white  text-xl  rounded-xl  hover:bg-black   transition duration-100 ease-in-out">
+              <li
+                className={`lg:inline-block  text-black-200   hover:text-white  text-xl  rounded-xl hover:bg-black    transition duration-100 ease-in-out ${
+                  activeLink === "/about" ? "bg-black text-white" : ""
+                }`}
+              >
+                {" "}
                 <Link
                   to="/about"
                   onClick={toggleMenu}
@@ -65,7 +81,11 @@ function NavBar() {
                   About
                 </Link>
               </li>
-              <li className=" lg:inline-block  text-black-200 hover:text-white  text-xl  rounded-xl  hover:bg-black   transition duration-100 ease-in-out">
+              <li
+                className={`lg:inline-block  text-black-200   hover:text-white  text-xl  rounded-xl hover:bg-black    transition duration-100 ease-in-out ${
+                  activeLink === "/projects" ? "bg-black text-white" : ""
+                }`}
+              >
                 <Link
                   to="/projects"
                   onClick={toggleMenu}
