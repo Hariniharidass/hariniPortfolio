@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProjectCard from "/src/components/Acard.jsx"; 
+import ProjectCard from "/src/components/Acard.jsx";
 import formImage from "../assets/images/Duck-form.png";
 import cssSvgImage from "../assets/images/invitation.png";
 import responsiveNavigation from "../assets/images/responsiveNav.png";
@@ -8,19 +8,7 @@ import form from "../assets/videos/form.mp4";
 import party from "../assets/videos/party.mp4";
 import Search from "../components/Search";
 
-function projects() {
-  const [isProjectsShown, setIsProjectsShown] = useState(false);
-  const [isAnyPopUpOpen, setIsAnyPopUpOpen] = useState(false);
-
-  const toggleButton = () => {
-    setIsProjectsShown(!isProjectsShown);
-  };
-  const handlePopUpOpen = () => {
-    setIsAnyPopUpOpen(true);
-  };
-  const handlePopUpClose = () => {
-    setIsAnyPopUpOpen(false);
-  };
+function Aprojects() {
 
   const initialProjectsArray = [
     {
@@ -37,8 +25,7 @@ function projects() {
       image: formImage,
       imgAltText: "duck-form-image",
       video: form,
-      onPopUpOpen: handlePopUpOpen,
-      onPopUpClose: handlePopUpClose,
+
     },
     {
       projectName: "CSS SVG Animations",
@@ -55,8 +42,7 @@ function projects() {
       image: cssSvgImage,
       imgAltText: "css-svg-invitation",
       video: invite,
-      onPopUpOpen: handlePopUpOpen,
-      onPopUpClose: handlePopUpClose,
+
     },
     {
       projectName: "Responsive Navigation",
@@ -74,8 +60,6 @@ function projects() {
       image: responsiveNavigation,
       imgAltText: "responsive-navigation",
       video: party,
-      onPopUpOpen: handlePopUpOpen,
-      onPopUpClose: handlePopUpClose,
     },
   ];
 
@@ -91,20 +75,8 @@ function projects() {
   return (
     <div className="mt-10 flex justify-center items-center flex-col">
       <Search projects={initialProjectsArray} onSearch={handleSearch} />
-      <button
-        type="button"
-        onClick={toggleButton}
-        className="text-black text-2xl rounded-2xl m-4 p-6 bg-white cursor-pointer border-4 border-black hover:bg-black hover:text-white "
-        style={{ display: isAnyPopUpOpen ? "none" : "block" }}
-      >
-        {" "}
-        View All Projects
-      </button>
-      <div
-        className={`relative z-10 p-4  ${
-          isProjectsShown ? "flex flex-wrap gap-6 justify-center" : "hidden"
-        }`}
-      >
+
+      <div>
         {filteredProjects.map((project, index) => (
           <ProjectCard
             key={index}
@@ -116,8 +88,6 @@ function projects() {
             image={project.image}
             imgAltText={project.imgAltText}
             video={project.video}
-            onPopUpOpen={project.onPopUpOpen}
-            onPopUpClose={project.onPopUpClose}
           />
         ))}
       </div>
@@ -125,4 +95,4 @@ function projects() {
   );
 }
 
-export default projects;
+export default Aprojects;

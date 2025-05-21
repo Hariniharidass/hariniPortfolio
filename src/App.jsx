@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home.jsx";
 import About from "./pages/about.jsx";
-import Projects from "./pages/projects.jsx";
+import Projects from "./pages/Aprojects.jsx";
 import Navbar from "./components/NavigationBar.jsx";
 
 
