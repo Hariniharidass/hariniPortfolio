@@ -9,10 +9,10 @@ import party from "../assets/videos/party.mp4";
 import Search from "../components/Search";
 
 function Aprojects() {
-
   const initialProjectsArray = [
     {
       projectName: "Forms",
+      liveLink: "https://hariniharidass.github.io/GuessingGame/",
       repoLink: "https://github.com/Hariniharidass/Html-forms",
       techUsed: ["HTML", "CSS"],
       description:
@@ -22,44 +22,36 @@ function Aprojects() {
         "Used with CSS attributes such as hover, focus",
         "Used normalize.css",
       ],
-      image: formImage,
-      imgAltText: "duck-form-image",
-      video: form,
-
     },
     {
-      projectName: "CSS SVG Animations",
-      repoLink: "https://github.com/Hariniharidass/SVG-CSS-animation",
-      techUsed: ["HTML", "CSS"],
-      description: "This is a single page website for a birthday invitation",
+      projectName: "GuessingGame",
+      liveLink: "https://hariniharidass.github.io/GuessingGame/",
+      repoLink: "https://github.com/Hariniharidass/GuessingGame",
+      techUsed: ["TAILWIND", "REACT"],
+      description:
+        " A modern, responsive web application built with React that allows users to predict the nationality associated with a given name by leveraging an external API. ",
       details: [
-        "3 SVG images created (clock, envelope, house)",
-        "CSS animations with CSS transistion and @keyframe animation",
-        "Included Animate.css",
-        "Used normalize.css",
-        "Used Google Fonts ",
+        "Guess nationality from a last name using the nationalize.io API.",
+        "User Authentication with SignUp and SignIn forms ",
+        "Credentials stored in localStorage for demo purposes",
+        "Navbar adapts, showing login/register for guests and a welcome/logout for logged-in users",
+        "Seamless page transitions using React Router DOM ",
+        "Dynamic navigation and responsive design",
       ],
-      image: cssSvgImage,
-      imgAltText: "css-svg-invitation",
-      video: invite,
-
     },
     {
       projectName: "Responsive Navigation",
+      liveLink: "https://hariniharidass.github.io/Responsive-navigation/",
       repoLink: "https://github.com/Hariniharidass/Responsive-navigation",
-      techUsed: ["HTML", "CSS", "SASS"],
+      techUsed: ["HTML", "SASS", "JAVASCRIPT"],
       description:
         "A webpage for event organiser with different pages using responsive navigation.",
       details: [
         "Used hamburger menu for navigation in small devices",
         "All links on the page is accessible at all screen sizes",
-        "Implemented SASS",
-        "Modularised different components on the page for scalabilty",
+        "Implemented SASS, semantic HTML",
         "Used normalize.css",
       ],
-      image: responsiveNavigation,
-      imgAltText: "responsive-navigation",
-      video: party,
     },
   ];
 
@@ -82,12 +74,10 @@ function Aprojects() {
             key={index}
             projectName={project.projectName}
             repoLink={project.repoLink}
+            liveLink={project.liveLink}
             techUsed={project.techUsed}
             description={project.description}
             details={project.details}
-            image={project.image}
-            imgAltText={project.imgAltText}
-            video={project.video}
           />
         ))}
       </div>
