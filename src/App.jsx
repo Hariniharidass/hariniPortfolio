@@ -38,47 +38,47 @@ function App() {
           options: {
             image: [
               {
-                src: "hariniPortfolio/public/images/html.svg",
+                src: "public/images/html.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "hariniPortfolio/public/images/css.svg",
+                src: "public/images/css.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "hariniPortfolio/public/images/js.svg",
+                src: "public/images/js.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "hariniPortfolio/public/images/tailwind.svg",
+                src: "public/images/tailwind.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "hariniPortfolio/public/images/node.svg",
+                src: "public/images/node.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "hariniPortfolio/public/images/sass.svg",
+                src: "public/images/sass.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "hariniPortfolio/public/images/mongodb.svg",
+                src: "public/images/mongodb.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "hariniPortfolio/public/images/react.svg",
+                src: "public/images/react.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "hariniPortfolio/public/images/mysql.svg",
+                src: "public/images/mysql.svg",
                 width: 32,
                 height: 32,
               },
