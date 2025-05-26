@@ -8,6 +8,15 @@ import About from "./pages/about.jsx";
 import Projects from "./pages/Aprojects.jsx";
 import Navbar from "./components/NavigationBar.jsx";
 
+import html from "../public/images/html.svg";
+import css from "../public/images/css.svg";
+import js from "../public/images/js.svg";
+import mongodb from "../public/images/mongodb.svg";
+import mysql from "../public/images/mysql.svg";
+import node from "../public/images/node.svg";
+import react from "../public/images/react.svg";
+import sass from "../public/images/sass.svg";
+import tailwind from "../public/images/tailwind.svg";
 function App() {
   const [init, setInit] = useState(false);
 
@@ -38,47 +47,47 @@ function App() {
           options: {
             image: [
               {
-                src: "/images/html.svg",
+                src: { html },
                 width: 32,
                 height: 32,
               },
               {
-                src: "/images/css.svg",
+                src: { css },
                 width: 32,
                 height: 32,
               },
               {
-                src: "/images/js.svg",
+                src: { js },
                 width: 32,
                 height: 32,
               },
               {
-                src: "/images/tailwind.svg",
+                src: { tailwind },
                 width: 32,
                 height: 32,
               },
               {
-                src: "/images/node.svg",
+                src: { node },
                 width: 32,
                 height: 32,
               },
               {
-                src: "/images/sass.svg",
+                src: { sass },
                 width: 32,
                 height: 32,
               },
               {
-                src: "/images/mongodb.svg",
+                src: { mongodb },
                 width: 32,
                 height: 32,
               },
               {
-                src: "/images/react.svg",
+                src: { react },
                 width: 32,
                 height: 32,
               },
               {
-                src: "/images/mysql.svg",
+                src: { mysql },
                 width: 32,
                 height: 32,
               },
