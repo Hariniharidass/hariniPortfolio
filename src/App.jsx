@@ -8,15 +8,6 @@ import About from "./pages/about.jsx";
 import Projects from "./pages/Aprojects.jsx";
 import Navbar from "./components/NavigationBar.jsx";
 
-import html from "../public/images/html.svg";
-import css from "../public/images/css.svg";
-import js from "../public/images/js.svg";
-import mongodb from "../public/images/mongodb.svg";
-import mysql from "../public/images/mysql.svg";
-import node from "../public/images/node.svg";
-import react from "../public/images/react.svg";
-import sass from "../public/images/sass.svg";
-import tailwind from "../public/images/tailwind.svg";
 function App() {
   const [init, setInit] = useState(false);
 
@@ -47,47 +38,47 @@ function App() {
           options: {
             image: [
               {
-                src: "../public/images/html.svg",
+                src: "hariniPortfolio/public/images/html.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "../public/images/css.svg",
+                src: "hariniPortfolio/public/images/css.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "../public/images/js.svg",
+                src: "hariniPortfolio/public/images/js.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "../public/images/tailwind.svg",
+                src: "hariniPortfolio/public/images/tailwind.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "../public/images/node.svg",
+                src: "hariniPortfolio/public/images/node.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "../public/images/sass.svg",
+                src: "hariniPortfolio/public/images/sass.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "../public/images/mongodb.svg",
+                src: "hariniPortfolio/public/images/mongodb.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "../public/images/react.svg",
+                src: "hariniPortfolio/public/images/react.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: "../public/images/mysql.svg",
+                src: "hariniPortfolio/public/images/mysql.svg",
                 width: 32,
                 height: 32,
               },
