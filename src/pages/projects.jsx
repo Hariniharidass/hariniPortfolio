@@ -1,11 +1,5 @@
 import React, { useState } from "react";
 import ProjectCard from "/src/components/Acard.jsx"; 
-import formImage from "../assets/images/Duck-form.png";
-import cssSvgImage from "../assets/images/invitation.png";
-import responsiveNavigation from "../assets/images/responsiveNav.png";
-import invite from "../assets/videos/bdInvite.mp4";
-import form from "../assets/videos/form.mp4";
-import party from "../assets/videos/party.mp4";
 import Search from "../components/Search";
 
 function projects() {
