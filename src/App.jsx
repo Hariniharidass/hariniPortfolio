@@ -8,7 +8,6 @@ import About from "./pages/about.jsx";
 import Projects from "./pages/Aprojects.jsx";
 import Navbar from "./components/NavigationBar.jsx";
 
-
 function App() {
   const [init, setInit] = useState(false);
 
@@ -131,7 +130,7 @@ function App() {
           className="absolute top-0 left-0 w-full h-full z-[-1]"
         />
       )}
-      <BrowserRouter>
+      <BrowserRouter basename="/hariniPortfolio/">
         <Navbar></Navbar>
         <Routes>
           <Route path="/" element={<Home />}>
