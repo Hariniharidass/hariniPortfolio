@@ -47,47 +47,47 @@ function App() {
           options: {
             image: [
               {
-                src: { html },
+                src: "../public/images/html.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: { css },
+                src: "../public/images/css.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: { js },
+                src: "../public/images/js.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: { tailwind },
+                src: "../public/images/tailwind.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: { node },
+                src: "../public/images/node.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: { sass },
+                src: "../public/images/sass.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: { mongodb },
+                src: "../public/images/mongodb.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: { react },
+                src: "../public/images/react.svg",
                 width: 32,
                 height: 32,
               },
               {
-                src: { mysql },
+                src: "../public/images/mysql.svg",
                 width: 32,
                 height: 32,
               },
