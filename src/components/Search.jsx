@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 
 function Search({ projects, onSearch }) {
-  
   const searchInputRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -11,7 +10,7 @@ function Search({ projects, onSearch }) {
     handleSearch(value);
   };
 
-// Search by Project Name
+  // Search by Project Name
   const handleSearch = (searchValue) => {
     if (projects && Array.isArray(projects)) {
       const filteredProjects = projects.filter((project) =>
@@ -38,7 +37,7 @@ function Search({ projects, onSearch }) {
   };
 
   return (
-    <div className=" flex-row items-center w-1/2  h-auto ">
+    <div className=" flex-row items-center w-auto h-auto ">
       <div className="flex justify-center w-full">
         <input
           type="text"
@@ -63,7 +62,14 @@ function Search({ projects, onSearch }) {
         <h2>Search based on tech tags</h2>
       </div>
 
-      <div className="flex w-full justify-evenly my-7 ">
+      <div className="grid  grid-cols-2  sm:grid-cols-3 gap-2 md:flex md:items-center w-full md:justify-evenly md:my-7  ">
+        <button
+          type="button"
+          onClick={() => handleTagSearch("all")}
+          className=" cursor-pointer p-3  hover:bg-white hover:text-black rounded bg-black text-white"
+        >
+          Show All
+        </button>
         <button
           type="button"
           onClick={() => handleTagSearch("html")}
@@ -84,6 +90,27 @@ function Search({ projects, onSearch }) {
           className=" cursor-pointer p-3  hover:bg-white hover:text-black rounded bg-black text-white"
         >
           SASS
+        </button>
+        <button
+          type="button"
+          onClick={() => handleTagSearch("tailwind")}
+          className=" cursor-pointer p-3  hover:bg-white hover:text-black rounded bg-black text-white"
+        >
+          Tailwind
+        </button>
+        <button
+          type="button"
+          onClick={() => handleTagSearch("javascript")}
+          className=" cursor-pointer p-3  hover:bg-white hover:text-black rounded bg-black text-white"
+        >
+          Javascript
+        </button>
+        <button
+          type="button"
+          onClick={() => handleTagSearch("react")}
+          className=" cursor-pointer p-3  hover:bg-white hover:text-black rounded bg-black text-white"
+        >
+          React
         </button>
       </div>
     </div>

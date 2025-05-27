@@ -1,12 +1,27 @@
 import Button from "../components/CustomButton";
 import myImage from "../../public/images/me.jpg";
+import { motion } from "motion/react";
 function home() {
   return (
     <div className="text-black mt-5 flex flex-col justify-center items-center">
-      <img
+      <motion.img
+        initial={{ scale: 1, opacity: 1, rotate: 0 }}
+        whileInView={{
+          scale: 1,
+          opacity: 1,
+          rotateY: 360,
+          transition: {
+            duration: 5,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "loop",
+            delay: 1,
+          },
+        }}
+        viewport={{ once: false }}
         width="150"
         height="350"
-        className=" md:w-65 md:h-80 rounded-full"
+        className=" md:w-65 md:h-80 rounded-full border-2 border-black"
         src={myImage}
         alt="Harini-picture"
       />

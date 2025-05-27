@@ -8,7 +8,7 @@ function Aprojects() {
       projectName: "Forms",
       liveLink: "https://hariniharidass.github.io/GuessingGame/",
       repoLink: "https://github.com/Hariniharidass/Html-forms",
-      techUsed: ["HTML", "CSS"],
+      techUsed: ["all", "HTML", "CSS"],
       description:
         "The webpage layout from figma as a form is converted to a HTML and CSS code",
       details: [
@@ -18,10 +18,10 @@ function Aprojects() {
       ],
     },
     {
-      projectName: "GuessingGame",
+      projectName: "Guessing Game",
       liveLink: "https://hariniharidass.github.io/GuessingGame/",
       repoLink: "https://github.com/Hariniharidass/GuessingGame",
-      techUsed: ["TAILWIND", "REACT"],
+      techUsed: ["all", "TAILWIND", "REACT"],
       description:
         " A modern, responsive web application built with React that allows users to predict the nationality associated with a given name by leveraging an external API. ",
       details: [
@@ -37,7 +37,7 @@ function Aprojects() {
       projectName: "Responsive Navigation",
       liveLink: "https://hariniharidass.github.io/Responsive-navigation/",
       repoLink: "https://github.com/Hariniharidass/Responsive-navigation",
-      techUsed: ["HTML", "SASS", "JAVASCRIPT"],
+      techUsed: ["all", "HTML", "SASS", "JAVASCRIPT"],
       description:
         "A webpage for event organiser with different pages using responsive navigation.",
       details: [
@@ -55,7 +55,6 @@ function Aprojects() {
   //To handle search results and display projects
   const handleSearch = (results) => {
     setFilteredProjects(results);
-    setIsProjectsShown(true);
   };
 
   return (
