@@ -1,20 +1,139 @@
-import React, { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 import ProjectCard from "/src/components/Acard.jsx";
 import Search from "../components/Search";
 
 function Aprojects() {
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  const options = useMemo(
+    () => ({
+      background: {
+        color: {
+          value: "#f0f0f0",
+        },
+      },
+      particles: {
+        number: {
+          value: 50,
+        },
+        color: {
+          value: "#333333",
+        },
+        fullScreen: {
+          enable: false,
+        },
+        shape: {
+          type: "image",
+          options: {
+            image: [
+              {
+                src: "/hariniPortfolio/images/html.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/hariniPortfolio/images/css.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/hariniPortfolio/images/js.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/hariniPortfolio/images/tailwind.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/hariniPortfolio/images/node.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/hariniPortfolio/images/sass.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/hariniPortfolio/images/mongodb.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/hariniPortfolio/images/react.svg",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "/hariniPortfolio/images/mysql.svg",
+                width: 32,
+                height: 32,
+              },
+            ],
+          },
+        },
+        opacity: {
+          value: 0.4,
+        },
+        size: {
+          value: 16,
+        },
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: "random",
+          random: true,
+          straight: false,
+          outModes: "bounce",
+        },
+        collisions: {
+          enable: true,
+          bounce: {
+            horizontal: {
+              enable: true,
+              factor: 0.1,
+            },
+            vertical: {
+              enable: true,
+              factor: 0.5,
+            },
+          },
+          overlap: {
+            enable: true,
+          },
+        },
+      },
+      detectRetina: true,
+    }),
+    []
+  );
+
   const initialProjectsArray = [
     {
-      projectName: "Forms",
-      liveLink: "https://hariniharidass.github.io/GuessingGame/",
-      repoLink: "https://github.com/Hariniharidass/Html-forms",
-      techUsed: ["all", "HTML", "CSS"],
+      projectName: "Cookie Clicker",
+      liveLink: "https://hariniharidass.github.io/CookieClicker/",
+      repoLink: "https://github.com/Hariniharidass/CookieClicker",
+      techUsed: ["all", "TAILWIND", "REACT"],
       description:
-        "The webpage layout from figma as a form is converted to a HTML and CSS code",
+        "Cookie Clicker game built with React and Tailwind CSS. It features user authentication (login and registration), profile avatar selection, and background music, all integrated into a classic incremental clicking game experience.",
       details: [
-        "Used HTML form elements and validations",
-        "Used with CSS attributes such as hover, focus",
-        "Used normalize.css",
+        " Navigation Bar: Provides intuitive navigation and displays user login status, username, and profile picture. It includes a toggle for background music and logout functionality.",
+        " User Authentication: Log in and register to save your game progress locally using localStorage.",
+        " Profile Avatars: Choose a unique avatar during registration from a selection fetched from the DiceBear API.",
+        "  Background Music: Enjoy optional background music during gameplay, with toggle functionality.",
+        " Cookie Clicker Gameplay: The core mechanic involves clicking a large cookie to generate more cookies. Spend earned cookies on various upgrades to increase cookie production rate. ",
       ],
     },
     {
@@ -58,7 +177,14 @@ function Aprojects() {
   };
 
   return (
-    <div className="mt-10 flex justify-center items-center flex-col">
+    <div className="mt-10 flex justify-center items-center flex-col relative overflow-hidden">
+      {init && (
+        <Particles
+          id="tsparticles"
+          options={options}
+          className=" absolute inset-0 z-[-1]"
+        />
+      )}
       <Search projects={initialProjectsArray} onSearch={handleSearch} />
 
       <div>

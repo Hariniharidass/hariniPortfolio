@@ -1,26 +1,25 @@
 import Button from "../components/CustomButton";
 import myImage from "../../public/images/me.jpg";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 function home() {
   return (
     <div className="text-black mt-5 flex flex-col justify-center items-center">
       <motion.img
-        initial={{ scale: 1, opacity: 1, rotate: 0 }}
+        initial={{ scale: 0.6, opacity: 1 }}
         whileInView={{
           scale: 1,
           opacity: 1,
-          rotateY: 360,
           transition: {
-            duration: 5,
-            ease: "easeInOut",
-            repeat: Infinity,
-            repeatType: "loop",
-            delay: 1,
+            duration: 1,
+            ease: "easeOut",
           },
         }}
-        viewport={{ once: false }}
-        width="150"
-        height="350"
+        viewport={{ once: true }}
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+        width={150}
+        height={150}
         className=" md:w-65 md:h-80 rounded-full border-2 border-black"
         src={myImage}
         alt="Harini-picture"
