@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/home.jsx";
-import About from "./pages/about.jsx";
-import Projects from "./pages/Aprojects.jsx";
+import Home from "./pages/HomePage.jsx";
+import About from "./pages/AboutPage.jsx";
+import Projects from "./pages/ProjectsPage.jsx";
 import Navbar from "./components/NavigationBar.jsx";
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-  
+
   );
 }
 

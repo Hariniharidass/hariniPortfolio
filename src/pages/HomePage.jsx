@@ -1,7 +1,7 @@
 import Button from "../components/CustomButton";
 import myImage from "../../public/images/me.jpg";
 import { motion } from "framer-motion";
-function home() {
+function Home() {
   return (
     <div className="text-black mt-5 flex flex-col justify-center items-center">
       <motion.img
@@ -31,7 +31,7 @@ function home() {
       </h5>
 
       <a
-        className="md:text-2xl text-lg border-black hover:bg-black hover:text-white rounded-2xl md:w-2/6 md:h-25 w-1/6 h-20"
+        className="md:text-2xl text-lg border-black  hover:bg-black hover:text-white rounded-2xl md:w-2/6 md:h-25 w-1/6 h-20 mt-5"
         href="mailto:hello2harinihari@gmail.com"
       >
         <Button name="Hire me !" />
@@ -40,4 +40,4 @@ function home() {
   );
 }
 
-export default home;
+export default Home;

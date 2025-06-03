@@ -7,6 +7,8 @@ import resilient from "../../public/images/resilient.jpg";
 import teamwork from "../../public/images/teamwork.jpg";
 import techskills from "../../public/images/techskills.jpg";
 import continuouslearning from "../../public/images/continuouslearning.jpg";
+import linkedin from "../../public/images/linkedin.png";
+import github from "../../public/images/github.png";
 
 const containerVariants = {
   visible: {
@@ -27,11 +29,37 @@ const imageChildVariants = {
   },
 };
 
-function about() {
-
+function About() {
+  const githubLink = "https://github.com/Hariniharidass";
+  const linkedinLink =
+    "https://www.linkedin.com/in/harini-natarajan-854b9510a/";
   return (
-    <div className="flex flex-col justify-center items-center my-20 text-2xl">
-      <h1>Get to know me...</h1>
+    <div className="flex flex-col justify-center items-center my-20 md:text-2xl text-sm">
+      <div className="w-full inline-flex justify-evenly items-center h-fit">
+        <h1 className="md:text-2xl text-sm">Get to know me...</h1>{" "}
+        <a
+          href={linkedinLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            className="md:w-12 md:h-12  w-6 h-6 "
+            src={linkedin}
+            alt="LinkedIn Logo"
+          />
+        </a>
+        <a
+          href={githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            className="md:w-12 md:h-12  w-6 h-6 "
+            src={github}
+            alt="Github Logo"
+          />
+        </a>
+      </div>
       <div className="grid gap-5">
         <motion.div
           className="grid grid-cols-3 m-4 p-2  bg-gray-300 "
@@ -233,4 +261,4 @@ function about() {
   );
 }
 
-export default about;
+export default About;

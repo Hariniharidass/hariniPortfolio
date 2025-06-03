@@ -13,7 +13,7 @@ const techIconMap = {
   GITHUB: <DiGithubBadge size="30px" color="#000000" />,
 };
 
-function Acard(props) {
+function Card(props) {
   const techIcons = props.techUsed ? (
     <div className="flex flex-row items-center ml-1.5 ">
       {props.techUsed.map((tech, index) => (
@@ -103,4 +103,4 @@ function Acard(props) {
   );
 }
 
-export default Acard;
+export default Card;

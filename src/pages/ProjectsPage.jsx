@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import ProjectCard from "/src/components/Acard.jsx";
+import ProjectCard from "../components/ProjectCard";
 import Search from "../components/Search";
 
-function Aprojects() {
+function Projects() {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -204,4 +204,4 @@ function Aprojects() {
   );
 }
 
-export default Aprojects;
+export default Projects;

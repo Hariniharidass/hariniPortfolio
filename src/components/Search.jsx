@@ -77,13 +77,7 @@ function Search({ projects, onSearch }) {
         >
           HTML
         </button>
-        <button
-          type="button"
-          onClick={() => handleTagSearch("css")}
-          className=" cursor-pointer p-3  hover:bg-white hover:text-black rounded bg-black text-white"
-        >
-          CSS
-        </button>
+      
         <button
           type="button"
           onClick={() => handleTagSearch("sass")}

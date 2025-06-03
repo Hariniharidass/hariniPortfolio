@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../public/images/logo.png";
-function NavBar() {
+function NavigationBar() {
   const [isMenuDisplayed, setIsMenuDisplayed] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
   const location = useLocation();
@@ -20,11 +20,11 @@ function NavBar() {
           <Link to="/">
             <img
               src={logo}
-              className="fill-current h-13 w-13 mr-2"
+              className="fill-current md:h-13 md:w-13 h-7 w-7 mr-2"
               alt="logo"
             />
           </Link>
-          <span className="font-semibold text-xl ">
+          <span className="font-semibold md:text-xl text-base ">
             {" "}
             <Link to="/">Harini Natarajan</Link>
           </span>
@@ -102,4 +102,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default NavigationBar;
