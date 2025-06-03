@@ -10,11 +10,10 @@ function home() {
           scale: 1,
           opacity: 1,
           transition: {
-            duration: 1,
+            duration: 0.3,
             ease: "easeOut",
           },
         }}
-        viewport={{ once: true }}
         loading="eager"
         fetchPriority="high"
         decoding="async"
