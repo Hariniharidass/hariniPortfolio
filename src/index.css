@@ -1,11 +1,36 @@
 @import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+@theme {
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f8f8f8;
+  --color-text-primary: #000814;
+  --color-text-secondary: #001d3d;
+  --color-accent-primary: #ffd60a;
+  --color-accent-secondary: #ffc300;
+  --color-border: rgba(0, 53, 102, 0.1);
+
+  --tw-color-black: #000814;
+  --tw-color-dBlue: #001d3d;
+  --tw-color-lBlack: #003566;
+  --tw-color-dYellow: #ffc300;
+  --tw-color-lYellow: #ffd60a;
+}
+.dark {
+  --color-background-primary: #000814;
+  --color-background-secondary: #001d3d;
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #e0e0e0;
+  --color-accent-primary: #ffd60a;
+  --color-accent-secondary: #ffc300;
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
 
 * {
-    font-family: "EB Garamond",
-        serif;
+  font-family: "EB Garamond", serif;
 }
 
 input:focus {
-    outline: none;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+  outline: none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
 }
