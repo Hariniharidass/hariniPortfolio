@@ -25,10 +25,10 @@ function Card(props) {
   ) : null;
 
   return (
-    <div className="m-3">
+    <div className="m-3 text-text-primary">
       <div className="flex flex-col justify-start items-center w-full ">
-        <details className="w-full m-4 border-4 border-gray-300 rounded-lg shadow-lg bg-gray-100 overflow-hidden">
-          <summary className=" lg:text-xl text-lg font-bold cursor-pointer py-4 bg-gray-300 w-full  flex items-center text-center border-b-4 border-gray-300">
+        <details className="w-full m-4 border-2 border-accent-secondary rounded-lg shadow-lg bg-background-secondary overflow-hidden">
+          <summary className=" lg:text-xl text-lg font-bold cursor-pointer py-4 bg-background-primary w-full  flex items-center text-center border-b-4 border-accent-secondary ">
             <span className="flex-grow text-center">{props.projectName}</span>
           </summary>
           <div className="md:grid md:grid-cols-3 place-items-center flex flex-col items-center">
@@ -39,7 +39,7 @@ function Card(props) {
                     href={props.repoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-black-600 hover:text-blue-500"
+                    className="text-black-600 hover:text-accent-primary"
                   >
                     GitHub Repository{" "}
                     <DiGithubBadge
@@ -56,7 +56,7 @@ function Card(props) {
                   href={props.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black-600 hover:text-blue-500"
+                  className="text-black-600 hover:text-accent-primary"
                 >
                   Live Demo{" "}
                 </a>
@@ -72,7 +72,7 @@ function Card(props) {
             <div className="col-span-3">
               {props.description && (
                 <div className="mt-4 text-center">
-                  <p className="font-semibold lg:text-lg text-base">
+                  <p className="font-semibold lg:text-lg text-base text-accent-primary">
                     Description:
                   </p>
                   <p className="mt-2 lg:text-lg text-base">
@@ -85,7 +85,7 @@ function Card(props) {
             <div className="col-span-3">
               {props.details && props.details.length > 0 && (
                 <div className="mt-4 text-center my-3">
-                  <p className="font-semibold lg:text-l text-base">
+                  <p className="font-semibold lg:text-l text-base text-accent-primary">
                     Key Details:
                   </p>
                   <ul className="list-disc list-inside ml-4 mt-2 lg:text-lg text-base">

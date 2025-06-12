@@ -34,9 +34,9 @@ function About() {
   const linkedinLink =
     "https://www.linkedin.com/in/harini-natarajan-854b9510a/";
   return (
-    <div className="flex flex-col justify-center items-center my-20 md:text-2xl text-sm mt-10">
-      <div className="w-full inline-flex justify-evenly items-center h-fit">
-        <h1 className="md:text-2xl text-sm">Get to know me...</h1>{" "}
+    <div className="flex flex-col justify-center items-center my-20 md:text-2xl text-sm mt-15 text-text-primary bg-background-primary">
+      <div className="w-full inline-flex justify-evenly items-center h-fit bg-background-primary">
+        <h1 className="md:text-2xl text-sm text-text-primary">Get to know me...</h1>{" "}
         <a
           href={linkedinLink}
           target="_blank"
@@ -54,7 +54,7 @@ function About() {
           rel="noopener noreferrer"
         >
           <img
-            className="md:w-12 md:h-12  w-6 h-6 "
+            className="md:w-12 md:h-12  w-6 h-6 bg-white"
             src={github}
             alt="Github Logo"
           />
@@ -62,7 +62,7 @@ function About() {
       </div>
       <div className="grid gap-5">
         <motion.div
-          className="grid grid-cols-3 m-4 p-2  bg-gray-300 "
+          className="grid grid-cols-3 m-4 p-2  bg-background-secondary "
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -76,7 +76,7 @@ function About() {
             </p>
           </div>
           <motion.div
-            className="justify-self-center bg-gray-300"
+            className="justify-self-center bg-background-secondary"
             variants={imageChildVariants}
           >
             <img
@@ -111,7 +111,7 @@ function About() {
           </div>
         </motion.div>
         <motion.div
-          className="grid grid-cols-3 m-4 p-2  bg-gray-300"
+          className="grid grid-cols-3 m-4 p-2  bg-background-secondary"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -160,7 +160,7 @@ function About() {
           </div>
         </motion.div>
         <motion.div
-          className="grid grid-cols-3 m-4 p-2  bg-gray-300"
+          className="grid grid-cols-3 m-4 p-2  bg-background-secondary"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -208,7 +208,7 @@ function About() {
           </div>
         </motion.div>
         <motion.div
-          className="grid grid-cols-3 m-4 p-2  bg-gray-300"
+          className="grid grid-cols-3 m-4 p-2  bg-background-secondary"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

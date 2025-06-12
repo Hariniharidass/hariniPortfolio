@@ -1,11 +1,25 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useLayoutEffect } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import ProjectCard from "../components/ProjectCard";
 import Search from "../components/Search";
-
+import { useTheme } from "../context/ThemeContext";
 function Projects() {
   const [init, setInit] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  const [particlesBackground, setParticlesBackground] = useState("#ffffff");
+
+  useLayoutEffect(() => {
+    console.log(theme);
+    switch (theme) {
+      case "dark":
+        setParticlesBackground("#000814");
+        break;
+      case "light":
+        setParticlesBackground("#ffffff");
+        break;
+    }
+  }, [theme]);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -19,7 +33,7 @@ function Projects() {
     () => ({
       background: {
         color: {
-          value: "#f0f0f0",
+          value: particlesBackground,
         },
       },
       particles: {
@@ -85,7 +99,7 @@ function Projects() {
           },
         },
         opacity: {
-          value: 0.4,
+          value: 0.6,
         },
         size: {
           value: 16,
@@ -117,7 +131,7 @@ function Projects() {
       },
       detectRetina: true,
     }),
-    []
+    [particlesBackground]
   );
 
   const initialProjectsArray = [
@@ -177,31 +191,30 @@ function Projects() {
   };
 
   return (
+    <div className="mt-30 flex justify-center items-center flex-col relative overflow-hidden">
+      {init && (
+        <Particles
+          id="tsparticles"
+          options={options}
+          className=" absolute inset-0 z-[-1]"
+        />
+      )}
+      <Search projects={initialProjectsArray} onSearch={handleSearch} />
 
-      <div className="mt-30 flex justify-center items-center flex-col relative overflow-hidden">
-        {init && (
-          <Particles
-            id="tsparticles"
-            options={options}
-            className=" absolute inset-0 z-[-1]"
+      <div>
+        {filteredProjects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            projectName={project.projectName}
+            repoLink={project.repoLink}
+            liveLink={project.liveLink}
+            techUsed={project.techUsed}
+            description={project.description}
+            details={project.details}
           />
-        )}
-        <Search projects={initialProjectsArray} onSearch={handleSearch} />
-
-        <div>
-          {filteredProjects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              projectName={project.projectName}
-              repoLink={project.repoLink}
-              liveLink={project.liveLink}
-              techUsed={project.techUsed}
-              description={project.description}
-              details={project.details}
-            />
-          ))}
-        </div>
+        ))}
       </div>
+    </div>
   );
 }
 
