@@ -34,25 +34,19 @@ function About() {
   const linkedinLink =
     "https://www.linkedin.com/in/harini-natarajan-854b9510a/";
   return (
-    <div className="flex flex-col justify-center items-center my-20 md:text-2xl text-sm mt-15 text-text-primary bg-background-primary">
+    <div className="flex flex-col justify-center items-center my-20 md:text-2xl text-sm mt-15 text-text-primary bg-background-primary min-h-screen">
       <div className="w-full inline-flex justify-evenly items-center h-fit bg-background-primary">
-        <h1 className="md:text-2xl text-sm text-text-primary">Get to know me...</h1>{" "}
-        <a
-          href={linkedinLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <h1 className="md:text-2xl text-sm text-text-primary">
+          Get to know me...
+        </h1>{" "}
+        <a href={linkedinLink} target="_blank" rel="noopener noreferrer">
           <img
             className="md:w-12 md:h-12  w-6 h-6 "
             src={linkedin}
             alt="LinkedIn Logo"
           />
         </a>
-        <a
-          href={githubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={githubLink} target="_blank" rel="noopener noreferrer">
           <img
             className="md:w-12 md:h-12  w-6 h-6 bg-white"
             src={github}

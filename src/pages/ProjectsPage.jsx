@@ -60,7 +60,7 @@ function Projects() {
   };
 
   return (
-    <div className="mt-30 flex justify-center items-center flex-col relative overflow-hidden">
+    <div className="mt-30 flex justify-center items-center flex-col relative overflow-hidden min-h-screen">
       <ParticlesBackground />
       <Search projects={initialProjectsArray} onSearch={handleSearch} />
 
