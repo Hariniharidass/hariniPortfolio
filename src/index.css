@@ -2,10 +2,10 @@
 @custom-variant dark (&:is(.dark *));
 @theme {
   --color-background-primary: #ffffff;
-  --color-background-secondary: #f8f8f8;
+  --color-background-secondary: #c9c6c6;
   --color-text-primary: #000814;
   --color-text-secondary: #001d3d;
-  --color-accent-primary: #ffd60a;
+  --color-accent-primary: #fff70a;
   --color-accent-secondary: #ffc300;
   --color-border: rgba(0, 53, 102, 0.1);
 
@@ -13,14 +13,14 @@
   --tw-color-dBlue: #001d3d;
   --tw-color-lBlack: #003566;
   --tw-color-dYellow: #ffc300;
-  --tw-color-lYellow: #ffd60a;
+  --tw-color-lYellow: #fff70a;
 }
 .dark {
   --color-background-primary: #000814;
   --color-background-secondary: #001d3d;
   --color-text-primary: #f9fafb;
-  --color-text-secondary: #e0e0e0;
-  --color-accent-primary: #ffd60a;
+  --color-text-secondary: #c9c6c6;
+  --color-accent-primary: #fff70a;
   --color-accent-secondary: #ffc300;
   --color-border: rgba(255, 255, 255, 0.1);
 }

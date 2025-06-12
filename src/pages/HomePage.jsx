@@ -19,7 +19,7 @@ function Home() {
         decoding="async"
         width={150}
         height={150}
-        className=" md:w-65 md:h-80 rounded-full z-200"
+        className=" md:w-65 md:h-80 rounded-full"
         src={myImage}
         alt="Harini-picture"
       />
