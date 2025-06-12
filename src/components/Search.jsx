@@ -41,7 +41,7 @@ function Search({ projects, onSearch }) {
       <div className="flex justify-center w-full">
         <input
           type="text"
-          placeholder="Search by Title... "
+          placeholder="Search by Project Title... "
           className="w-2/3 my-2 text-2xl text-black bg-white border-2 border-r-0  p-3"
           onChange={handleInputChange}
           ref={searchInputRef}
@@ -77,7 +77,7 @@ function Search({ projects, onSearch }) {
         >
           HTML
         </button>
-      
+
         <button
           type="button"
           onClick={() => handleTagSearch("sass")}

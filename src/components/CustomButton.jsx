@@ -3,21 +3,21 @@ import gmail from "../../public/images/gmail.png";
 const CustomButton = ({ name }) => {
   return (
     <>
-      <div className="btn-container flex flex-col justify-center items-center ">
+      <div className="flex flex-col justify-center items-center ">
         <button
-          className={`inline-flex border-b-2 justify-around items-center bg-background-primary text-text-primary  hover:text-text-primary hover:font-bold   dark:bg-background-primary dark:text-text-primary   dark:hover:text-accent-primary w-[200px] h-[70px] md:w-[250px] md:h-[100px  p-2  outline-accent-primary dark:hover:outline-accent-primary
+          className={`inline-flex hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-1 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-accent-primary before:absolute before:left-0 before:bottom-0 justify-around items-center bg-background-primary text-text-primary  hover:text-text-primary hover:font-medium  w-fit h-10 md:w-fit md:h-20
           `}
         >
           <span>
             <img
               width="48"
               height="48"
-              className="w-10 h-10 md:w-15 md:h-15 z-100"
+              className="w-10 h-10 md:w-15 md:h-15 z-100 mr-4"
               src={gmail}
               alt="gmail-image"
             />
           </span>
-          <span className="inline-flex flex-row z-100">{name}</span>
+          <span className=" flex-row z-100 hidden md:inline ">{name}</span>
         </button>
       </div>
     </>

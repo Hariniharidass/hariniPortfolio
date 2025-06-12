@@ -3,7 +3,7 @@ import myImage from "../../public/images/me.jpg";
 import { motion } from "framer-motion";
 function Home() {
   return (
-    <div className="text-text-primary bg-background-primary dark:bg-background-primary dark:text-text-primary pt-10 flex flex-col justify-center items-center">
+    <div className="text-text-primary bg-background-primary dark:bg-background-primary dark:text-text-primary pt-10 flex flex-col justify-center items-center mt-10">
       <motion.img
         initial={{ scale: 0.6, opacity: 1 }}
         whileInView={{
@@ -19,7 +19,7 @@ function Home() {
         decoding="async"
         width={150}
         height={150}
-        className=" md:w-65 md:h-80 rounded-full "
+        className=" md:w-65 md:h-80 rounded-full z-200"
         src={myImage}
         alt="Harini-picture"
       />
@@ -34,7 +34,7 @@ function Home() {
         className="md:text-2xl text-lg border-border hover:bg-accent-primary hover:text-text-secondary rounded-2xl md:w-2/6 md:h-25 w-1/6 h-20 mt-5"
         href="mailto:hello2harinihari@gmail.com"
       >
-        <Button name="Hire me !" />
+        <Button name="Send an Email !" />
       </a>
     </div>
   );

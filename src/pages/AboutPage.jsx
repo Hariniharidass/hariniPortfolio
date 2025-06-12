@@ -34,7 +34,7 @@ function About() {
   const linkedinLink =
     "https://www.linkedin.com/in/harini-natarajan-854b9510a/";
   return (
-    <div className="flex flex-col justify-center items-center my-20 md:text-2xl text-sm">
+    <div className="flex flex-col justify-center items-center my-20 md:text-2xl text-sm mt-10">
       <div className="w-full inline-flex justify-evenly items-center h-fit">
         <h1 className="md:text-2xl text-sm">Get to know me...</h1>{" "}
         <a

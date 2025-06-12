@@ -177,30 +177,31 @@ function Projects() {
   };
 
   return (
-    <div className="mt-10 flex justify-center items-center flex-col relative overflow-hidden">
-      {init && (
-        <Particles
-          id="tsparticles"
-          options={options}
-          className=" absolute inset-0 z-[-1]"
-        />
-      )}
-      <Search projects={initialProjectsArray} onSearch={handleSearch} />
 
-      <div>
-        {filteredProjects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            projectName={project.projectName}
-            repoLink={project.repoLink}
-            liveLink={project.liveLink}
-            techUsed={project.techUsed}
-            description={project.description}
-            details={project.details}
+      <div className="mt-30 flex justify-center items-center flex-col relative overflow-hidden">
+        {init && (
+          <Particles
+            id="tsparticles"
+            options={options}
+            className=" absolute inset-0 z-[-1]"
           />
-        ))}
+        )}
+        <Search projects={initialProjectsArray} onSearch={handleSearch} />
+
+        <div>
+          {filteredProjects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              projectName={project.projectName}
+              repoLink={project.repoLink}
+              liveLink={project.liveLink}
+              techUsed={project.techUsed}
+              description={project.description}
+              details={project.details}
+            />
+          ))}
+        </div>
       </div>
-    </div>
   );
 }
 

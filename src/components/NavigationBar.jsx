@@ -19,8 +19,8 @@ function NavigationBar() {
 
   return (
     <header>
-      <nav className="flex items-center justify-between flex-wrap bg-background-secondary dark:bg-background-secondary px-3 py-2 min-h-[60px] lg:min-h-fit">
-        <div className="flex items-center flex-shrink-0 text-text-primary dark:text-text-primary mr-6">
+      <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between flex-wrap bg-background-secondary px-3 py-2 min-h-[60px] lg:min-h-fit">
+        <div className="flex items-center flex-shrink-0 text-text-primary  mr-6">
           <Link to="/">
             <img
               src={logo}
@@ -38,7 +38,7 @@ function NavigationBar() {
           <button
             onClick={toggleMenu}
             type="button"
-            className="flex items-center px-3 py-2 border rounded text-black-200 border-black-400 hover:text-text-secondary dark:hover:text-text-secondary hover:border-gray-600"
+            className="flex items-center px-3 py-2 border rounded text-black-200 border-black-400 hover:text-text-secondary hover:border-gray-600"
           >
             <svg
               viewBox="0 0 100 80"
@@ -65,8 +65,8 @@ function NavigationBar() {
                     className={`border-2 m-4 p-2 rounded-l-md transition-all duration-200
                         ${
                           theme === "light"
-                            ? "border-accent-primary text-text-primary bg-background-secondary dark:bg-background-secondary dark:text-text-primary"
-                            : "border-none text-text-primary dark:text-background-primary dark:bg-text-primary dark:border-none"
+                            ? "border-accent-primary text-text-primary bg-background-secondary  "
+                            : "border-none text-text-primary  "
                         }`}
                     onClick={toggleTheme}
                   >
@@ -76,8 +76,8 @@ function NavigationBar() {
                     className={`border-2 p-2 rounded-r-md transition-all duration-200
                         ${
                           theme === "dark"
-                            ? "border-accent-primary text-text-primary bg-background-secondary dark:bg-background-secondary dark:text-text-primary"
-                            : "border-none text-text-primary dark:text-gray-300 dark:border-none"
+                            ? "border-accent-primary text-text-primary bg-background-secondary "
+                            : "border-none text-text-primary "
                         }`}
                     onClick={toggleTheme}
                   >
@@ -86,8 +86,8 @@ function NavigationBar() {
                 </div>
               </li>
               <li
-                className={`lg:inline-block  text-text-primary bg-transparent hover:text-accent-primary  dark:text-text-primary dark:hover:text-accent-primary  text-xl  rounded-xl hover:bg-text-primary dark:hover:bg-background-primary    transition duration-100 ease-in-out ${
-                  activeLink === "/" ? "bg-accent-secondary dark:text-text-primary" : ""
+                className={`lg:inline-block  text-text-primary bg-transparent hover:text-background-secondary     text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
+                  activeLink === "/" ? "underline underline-offset-4" : ""
                 }`}
               >
                 <Link
@@ -99,8 +99,8 @@ function NavigationBar() {
                 </Link>
               </li>
               <li
-                className={`lg:inline-block  text-black-200   hover:text-white  text-xl  rounded-xl hover:bg-black    transition duration-100 ease-in-out ${
-                  activeLink === "/about" ? "bg-black text-white" : ""
+                className={`lg:inline-block  text-text-primary bg-transparent hover:text-background-secondary     text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
+                  activeLink === "/about" ? "underline underline-offset-4" : ""
                 }`}
               >
                 {" "}
@@ -113,8 +113,10 @@ function NavigationBar() {
                 </Link>
               </li>
               <li
-                className={`lg:inline-block  text-black-200   hover:text-white  text-xl  rounded-xl hover:bg-black    transition duration-100 ease-in-out ${
-                  activeLink === "/projects" ? "bg-black text-white" : ""
+                className={`lg:inline-block  text-text-primary bg-transparent hover:text-background-secondary    text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
+                  activeLink === "/projects"
+                    ? " underline underline-offset-4"
+                    : ""
                 }`}
               >
                 <Link
