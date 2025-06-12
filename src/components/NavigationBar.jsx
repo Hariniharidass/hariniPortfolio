@@ -16,7 +16,10 @@ function NavigationBar() {
     setActiveLink(location.pathname);
     setIsMenuDisplayed(false);
   }, [location]);
-
+  const handleClick = () => {
+    toggleTheme();
+    toggleMenu();
+  };
   return (
     <header>
       <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between flex-wrap bg-background-secondary px-3 py-2 min-h-[60px] lg:min-h-fit">
@@ -38,7 +41,7 @@ function NavigationBar() {
           <button
             onClick={toggleMenu}
             type="button"
-            className="flex items-center px-3 py-2 border rounded text-black-200 border-black-400 hover:text-text-secondary hover:border-gray-600 cursor-pointer"
+            className="flex items-center px-3 py-2 border rounded text-text-primary border-text-primaryhover:text-text-secondary hover:border-gray-600 cursor-pointer"
           >
             <svg
               viewBox="0 0 100 80"
@@ -68,7 +71,7 @@ function NavigationBar() {
                             ? "border-accent-primary text-text-primary bg-background-secondary  "
                             : "border-none text-text-primary  "
                         }`}
-                    onClick={toggleTheme}
+                    onClick={handleClick}
                   >
                     <FiSun />
                   </button>
@@ -79,7 +82,7 @@ function NavigationBar() {
                             ? "border-accent-primary text-text-primary bg-background-secondary "
                             : "border-none text-text-primary "
                         }`}
-                    onClick={toggleTheme}
+                    onClick={handleClick}
                   >
                     <FiMoon />
                   </button>

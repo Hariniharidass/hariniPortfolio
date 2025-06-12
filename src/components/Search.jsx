@@ -35,7 +35,7 @@ function Search({ projects, onSearch }) {
       <div className="flex justify-center w-full">
         <input
           type="text"
-          placeholder="Search by Project Title... "
+          placeholder="Search by Title... "
           className="w-2/3 my-2 text-2xl placeholder:text-text-secondary text-text-primary bg-background-secondary border-2 p-4"
           onChange={handleInputChange}
           ref={searchInputRef}

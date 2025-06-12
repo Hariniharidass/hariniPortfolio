@@ -3,7 +3,7 @@ import myImage from "../../public/images/me.jpg";
 import { motion } from "framer-motion";
 function Home() {
   return (
-    <div className="text-text-primary bg-background-primary dark:bg-background-primary dark:text-text-primary pt-10 flex flex-col justify-center items-center mt-10">
+    <div className="text-text-primary bg-background-primary dark:bg-background-primary dark:text-text-primary pt-10 flex flex-col justify-center items-center mt-10 min-h-screen">
       <motion.img
         initial={{ scale: 0.6, opacity: 1 }}
         whileInView={{

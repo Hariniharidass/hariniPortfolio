@@ -1,139 +1,8 @@
-import { useEffect, useMemo, useState, useLayoutEffect } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
+import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import Search from "../components/Search";
-import { useTheme } from "../context/ThemeContext";
+import ParticlesBackground from "../components/ParticlesBackground";
 function Projects() {
-  const [init, setInit] = useState(false);
-  const { theme, toggleTheme } = useTheme();
-  const [particlesBackground, setParticlesBackground] = useState("#ffffff");
-
-  useLayoutEffect(() => {
-    console.log(theme);
-    switch (theme) {
-      case "dark":
-        setParticlesBackground("#000814");
-        break;
-      case "light":
-        setParticlesBackground("#ffffff");
-        break;
-    }
-  }, [theme]);
-
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
-
-  const options = useMemo(
-    () => ({
-      background: {
-        color: {
-          value: particlesBackground,
-        },
-      },
-      particles: {
-        number: {
-          value: 50,
-        },
-        color: {
-          value: "#333333",
-        },
-        fullScreen: {
-          enable: false,
-        },
-        shape: {
-          type: "image",
-          options: {
-            image: [
-              {
-                src: "/hariniPortfolio/images/html.svg",
-                width: 32,
-                height: 32,
-              },
-              {
-                src: "/hariniPortfolio/images/css.svg",
-                width: 32,
-                height: 32,
-              },
-              {
-                src: "/hariniPortfolio/images/js.svg",
-                width: 32,
-                height: 32,
-              },
-              {
-                src: "/hariniPortfolio/images/tailwind.svg",
-                width: 32,
-                height: 32,
-              },
-              {
-                src: "/hariniPortfolio/images/node.svg",
-                width: 32,
-                height: 32,
-              },
-              {
-                src: "/hariniPortfolio/images/sass.svg",
-                width: 32,
-                height: 32,
-              },
-              {
-                src: "/hariniPortfolio/images/mongodb.svg",
-                width: 32,
-                height: 32,
-              },
-              {
-                src: "/hariniPortfolio/images/react.svg",
-                width: 32,
-                height: 32,
-              },
-              {
-                src: "/hariniPortfolio/images/mysql.svg",
-                width: 32,
-                height: 32,
-              },
-            ],
-          },
-        },
-        opacity: {
-          value: 0.6,
-        },
-        size: {
-          value: 16,
-        },
-        move: {
-          enable: true,
-          speed: 1.5,
-          direction: "random",
-          random: true,
-          straight: false,
-          outModes: "bounce",
-        },
-        collisions: {
-          enable: true,
-          bounce: {
-            horizontal: {
-              enable: true,
-              factor: 0.1,
-            },
-            vertical: {
-              enable: true,
-              factor: 0.5,
-            },
-          },
-          overlap: {
-            enable: true,
-          },
-        },
-      },
-      detectRetina: true,
-    }),
-    [particlesBackground]
-  );
-
   const initialProjectsArray = [
     {
       projectName: "Cookie Clicker",
@@ -192,13 +61,7 @@ function Projects() {
 
   return (
     <div className="mt-30 flex justify-center items-center flex-col relative overflow-hidden">
-      {init && (
-        <Particles
-          id="tsparticles"
-          options={options}
-          className=" absolute inset-0 z-[-1]"
-        />
-      )}
+      <ParticlesBackground />
       <Search projects={initialProjectsArray} onSearch={handleSearch} />
 
       <div>
