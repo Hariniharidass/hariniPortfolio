@@ -31,7 +31,7 @@ function Home() {
       </h5>
 
       <a
-        className="md:text-2xl text-lg border-border hover:bg-accent-primary hover:text-text-secondary rounded-2xl md:w-2/6 md:h-25 w-1/6 h-20 mt-5"
+        className="md:text-2xl text-lg border-border hover:bg-accent-primary hover:text-text-secondary rounded-2xl md:w-2/6 md:h-25 w-1/6 h-20 mt-5 cursor-pointer"
         href="mailto:hello2harinihari@gmail.com"
       >
         <Button name="Send an Email !" />

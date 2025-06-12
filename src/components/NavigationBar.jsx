@@ -38,7 +38,7 @@ function NavigationBar() {
           <button
             onClick={toggleMenu}
             type="button"
-            className="flex items-center px-3 py-2 border rounded text-black-200 border-black-400 hover:text-text-secondary hover:border-gray-600"
+            className="flex items-center px-3 py-2 border rounded text-black-200 border-black-400 hover:text-text-secondary hover:border-gray-600 cursor-pointer"
           >
             <svg
               viewBox="0 0 100 80"
@@ -62,7 +62,7 @@ function NavigationBar() {
               <li>
                 <div className="inline-flex lg:items-center lg:justify-center lg:flex-1 mt-3">
                   <button
-                    className={`border-2 m-4 p-2 rounded-l-md transition-all duration-200
+                    className={`border-2 m-4 p-2 rounded-l-md transition-all duration-200 cursor-pointer
                         ${
                           theme === "light"
                             ? "border-accent-primary text-text-primary bg-background-secondary  "
@@ -73,7 +73,7 @@ function NavigationBar() {
                     <FiSun />
                   </button>
                   <button
-                    className={`border-2 p-2 rounded-r-md transition-all duration-200
+                    className={`border-2 p-2 rounded-r-md transition-all duration-200 cursor-pointer
                         ${
                           theme === "dark"
                             ? "border-accent-primary text-text-primary bg-background-secondary "
@@ -86,7 +86,7 @@ function NavigationBar() {
                 </div>
               </li>
               <li
-                className={`lg:inline-block  text-text-primary bg-transparent hover:text-background-secondary     text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
+                className={`lg:inline-block cursor-pointer text-text-primary bg-transparent hover:text-background-secondary     text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
                   activeLink === "/" ? "underline underline-offset-4" : ""
                 }`}
               >
@@ -99,7 +99,7 @@ function NavigationBar() {
                 </Link>
               </li>
               <li
-                className={`lg:inline-block  text-text-primary bg-transparent hover:text-background-secondary     text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
+                className={`lg:inline-block cursor-pointer text-text-primary bg-transparent hover:text-background-secondary     text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
                   activeLink === "/about" ? "underline underline-offset-4" : ""
                 }`}
               >
@@ -113,7 +113,7 @@ function NavigationBar() {
                 </Link>
               </li>
               <li
-                className={`lg:inline-block  text-text-primary bg-transparent hover:text-background-secondary    text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
+                className={`lg:inline-block cursor-pointer text-text-primary bg-transparent hover:text-background-secondary    text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
                   activeLink === "/projects"
                     ? " underline underline-offset-4"
                     : ""
