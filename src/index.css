@@ -4,20 +4,20 @@
   --color-background-primary: #ffffff;
   --color-background-secondary: #c9c6c6;
   --color-text-primary: #000814;
-  --color-text-secondary: #001d3d;
+  --color-text-secondary: #3d3e3f;
   --color-accent-primary: #fff70a;
   --color-accent-secondary: #ffc300;
   --color-border: rgba(0, 53, 102, 0.1);
 
   --tw-color-black: #000814;
-  --tw-color-dBlue: #001d3d;
+  --tw-color-dBlue: #3d3e3f;
   --tw-color-lBlack: #003566;
   --tw-color-dYellow: #ffc300;
   --tw-color-lYellow: #fff70a;
 }
 .dark {
   --color-background-primary: #000814;
-  --color-background-secondary: #001d3d;
+  --color-background-secondary: #3d3e3f;
   --color-text-primary: #f9fafb;
   --color-text-secondary: #c9c6c6;
   --color-accent-primary: #fff70a;

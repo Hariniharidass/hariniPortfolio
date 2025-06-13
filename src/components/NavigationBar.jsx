@@ -18,7 +18,9 @@ function NavigationBar() {
   }, [location]);
   const handleClick = () => {
     toggleTheme();
-    toggleMenu();
+    if (isMenuDisplayed) {
+      toggleMenu();
+    }
   };
   return (
     <header>
@@ -31,78 +33,131 @@ function NavigationBar() {
               alt="logo"
             />
           </Link>
-          <span className="font-semibold md:text-xl text-base ">
+          <span className="font-semibold sm:block md:block md:text-xl text-base ">
             {" "}
             <Link to="/">Harini Natarajan</Link>
           </span>
         </div>
-
-        <div className="block lg:hidden">
-          <button
-            onClick={toggleMenu}
-            type="button"
-            className="flex items-center px-3 py-2 border rounded text-text-primary border-text-primaryhover:text-text-secondary hover:border-gray-600 cursor-pointer"
-          >
-            <svg
-              viewBox="0 0 100 80"
-              width="40"
-              height="40"
-              className="fill-current h-3 w-3"
-            >
-              <rect width="100" height="20"></rect>
-              <rect y="30" width="100" height="20"></rect>
-              <rect y="60" width="100" height="20"></rect>
-            </svg>
-          </button>
-        </div>
-        <div
-          className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${
-            isMenuDisplayed ? "block" : "hidden"
-          }`}
-        >
-          <div className="text-sm lg:flex-grow">
-            <ul className="lg:flex lg:justify-end lg:gap-10 lg:items-center">
-              <li>
-                <div className="inline-flex lg:items-center lg:justify-center lg:flex-1 mt-3">
-                  <button
-                    className={`border-2 m-4 p-2 rounded-l-md transition-all duration-200 cursor-pointer
+        <div className="flex items-center ml-auto">
+          <div className="inline-flex mr-5 ">
+            <button
+              className={`border-2 px-3 py-2 rounded-l-md transition-all duration-200 cursor-pointer
                         ${
                           theme === "light"
                             ? "border-accent-primary text-text-primary bg-background-secondary  "
                             : "border-none text-text-primary  "
                         }`}
-                    onClick={handleClick}
-                  >
-                    <FiSun />
-                  </button>
-                  <button
-                    className={`border-2 p-2 rounded-r-md transition-all duration-200 cursor-pointer
+              onClick={handleClick}
+            >
+              <FiSun />
+            </button>
+            <button
+              className={`border-2 px-3 py-2 rounded-r-md transition-all duration-200 cursor-pointer
                         ${
                           theme === "dark"
                             ? "border-accent-primary text-text-primary bg-background-secondary "
                             : "border-none text-text-primary "
                         }`}
-                    onClick={handleClick}
+              onClick={handleClick}
+            >
+              <FiMoon />
+            </button>
+          </div>
+          <div className="block lg:hidden ">
+            <button
+              onClick={toggleMenu}
+              type="button"
+              className="flex items-center px-3 py-2 border rounded text-text-primary border-text-primaryhover:text-text-secondary hover:border-gray-600 cursor-pointer"
+            >
+              <svg
+                viewBox="0 0 100 80"
+                width="40"
+                height="40"
+                className="fill-current h-3 w-3"
+              >
+                <rect width="100" height="20"></rect>
+                <rect y="30" width="100" height="20"></rect>
+                <rect y="60" width="100" height="20"></rect>
+              </svg>
+            </button>
+          </div>
+          <div
+            className={`hidden lg:flex lg:items-center lg:w-auto ${
+              isMenuDisplayed ? "block" : "hidden"
+            } lg:flex-grow`}
+          >
+            <div className="text-sm lg:flex-grow">
+              <ul className="lg:flex lg:justify-end lg:gap-10 lg:items-center">
+                <li
+                  className={`lg:inline-block cursor-pointer text-text-primary bg-transparent hover:text-background-secondary     text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
+                    activeLink === "/" ? "underline underline-offset-4" : ""
+                  }`}
+                >
+                  <Link
+                    to="/"
+                    onClick={toggleMenu}
+                    className=" block my-1 mx-2 p-1 "
                   >
-                    <FiMoon />
-                  </button>
-                </div>
-              </li>
+                    Home
+                  </Link>
+                </li>
+                <li
+                  className={`lg:inline-block cursor-pointer text-text-primary bg-transparent hover:text-background-secondary     text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
+                    activeLink === "/about"
+                      ? "underline underline-offset-4"
+                      : ""
+                  }`}
+                >
+                  <Link
+                    to="/about"
+                    onClick={toggleMenu}
+                    className=" block my-1 mx-2 p-1 "
+                  >
+                    About
+                  </Link>
+                </li>
+                <li
+                  className={`lg:inline-block cursor-pointer text-text-primary bg-transparent hover:text-background-secondary    text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
+                    activeLink === "/projects"
+                      ? " underline underline-offset-4"
+                      : ""
+                  }`}
+                >
+                  <Link
+                    to="/projects"
+                    onClick={toggleMenu}
+                    className="block my-1 mx-2 p-1 "
+                  >
+                    Projects
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        {/* Menus for mobile view*/}
+        <div
+          className={`w-full ${
+            isMenuDisplayed ? "block" : "hidden"
+          } lg:hidden`}
+        >
+          <div className="text-sm">
+            <ul className="flex flex-col items-center">
               <li
-                className={`lg:inline-block cursor-pointer text-text-primary bg-transparent hover:text-background-secondary     text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
+                className={`cursor-pointer text-text-primary bg-transparent hover:text-background-secondary text-xl rounded-xl hover:bg-text-primary transition duration-100 ease-in-out ${
                   activeLink === "/" ? "underline underline-offset-4" : ""
                 }`}
               >
                 <Link
                   to="/"
                   onClick={toggleMenu}
-                  className=" block my-1 mx-2 p-1 "
+                  className="block my-1 mx-2 p-1 "
                 >
                   Home
                 </Link>
               </li>
               <li
-                className={`lg:inline-block cursor-pointer text-text-primary bg-transparent hover:text-background-secondary     text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
+                className={`cursor-pointer text-text-primary bg-transparent hover:text-background-secondary text-xl rounded-xl hover:bg-text-primary transition duration-100 ease-in-out ${
                   activeLink === "/about" ? "underline underline-offset-4" : ""
                 }`}
               >
@@ -110,13 +165,13 @@ function NavigationBar() {
                 <Link
                   to="/about"
                   onClick={toggleMenu}
-                  className=" block my-1 mx-2 p-1 "
+                  className="block my-1 mx-2 p-1 "
                 >
                   About
                 </Link>
               </li>
               <li
-                className={`lg:inline-block cursor-pointer text-text-primary bg-transparent hover:text-background-secondary    text-xl  rounded-xl hover:bg-text-primary   transition duration-100 ease-in-out ${
+                className={`cursor-pointer text-text-primary bg-transparent hover:text-background-secondary text-xl rounded-xl hover:bg-text-primary transition duration-100 ease-in-out ${
                   activeLink === "/projects"
                     ? " underline underline-offset-4"
                     : ""
