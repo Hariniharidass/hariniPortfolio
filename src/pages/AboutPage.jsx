@@ -9,7 +9,8 @@ import techskills from "../../public/images/techskills.jpg";
 import continuouslearning from "../../public/images/continuouslearning.jpg";
 import linkedin from "../../public/images/linkedin.png";
 import github from "../../public/images/github.png";
-
+import cv from "../../public/images/HariniCV.png";
+import { CgViewCols } from "react-icons/cg";
 const containerVariants = {
   visible: {
     opacity: 1,
@@ -38,7 +39,14 @@ function About() {
       <div className="w-full inline-flex justify-evenly items-center h-fit bg-background-primary">
         <h1 className="md:text-2xl text-sm text-text-primary">
           Get to know me...
-        </h1>{" "}
+        </h1>
+        <a href={cv} target="_blank" rel="noopener noreferrer">
+          <img
+            className="md:w-12 md:h-12 w-6 h-6 cv-image-pointer"
+            src={cv}
+            alt="HariniCV"
+          />
+        </a>
         <a href={linkedinLink} target="_blank" rel="noopener noreferrer">
           <img
             className="md:w-12 md:h-12  w-6 h-6 "

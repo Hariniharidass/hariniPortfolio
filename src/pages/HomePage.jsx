@@ -1,16 +1,16 @@
 import Button from "../components/CustomButton";
-import myImage from "../../public/images/me.jpg";
+import myImage from "../../public/images/me.png";
 import { motion } from "framer-motion";
 function Home() {
   return (
     <div className="text-text-primary bg-background-primary dark:bg-background-primary dark:text-text-primary pt-10 flex flex-col justify-center items-center mt-10 min-h-screen">
       <motion.img
-        initial={{ scale: 0.6, opacity: 1 }}
+        initial={{ scale: 0.4, opacity: 0 }}
         whileInView={{
           scale: 1,
           opacity: 1,
           transition: {
-            duration: 0.3,
+            duration: 0.5,
             ease: "easeOut",
           },
         }}
@@ -19,7 +19,7 @@ function Home() {
         decoding="async"
         width={150}
         height={150}
-        className=" md:w-65 md:h-80 rounded-full"
+        className="md:w-65 md:h-80 rounded-full"
         src={myImage}
         alt="Harini-picture"
       />
