@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Redirecting | Harini Natarajan</title>
+<script>
+  // Preserve the route while GitHub Pages serves the application entry point.
+  const base = '/hariniPortfolio/';
+  const route = location.pathname.slice(base.length) + location.search + location.hash;
+  location.replace(base + '?route=' + encodeURIComponent(route));
+</script>
+</head>
+<body><p>Returning to <a href="/hariniPortfolio/">Harini Natarajan’s portfolio</a>…</p></body>
+</html>
+

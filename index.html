@@ -2,48 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="images/favicon.ico" sizes="any">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="manifest" href="/hariniPortfolio/webmanifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-    <link rel="preload" as="image" href="/hariniPortfolio/images/me.jpg" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
-      rel="stylesheet">
-
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-      integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
-      crossorigin="anonymous" referrerpolicy="no-referrer">
-    <noscript>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
-        integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    </noscript>
-
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style"
-      onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    </noscript>
-
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style"
-      onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </noscript>
-<script>
-     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-</script>
-    <title>Harini Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg?v=4" sizes="any" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="canonical" href="https://hariniharidass.github.io/hariniPortfolio/" />
+    <meta name="description" content="Harini Natarajan, Fullstack Software Developer in Lund, Sweden. Experience with Python, FastAPI, Svelte, TypeScript, PostgreSQL, testing, Docker, and CI/CD." />
+    <meta property="og:title" content="Harini Natarajan | Fullstack Software Developer" />
+    <meta property="og:description" content="Explore my experience, technical skills, and projects across frontend development, backend APIs, testing, and containerization." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hariniharidass.github.io/hariniPortfolio/" />
+    <meta property="og:image" content="https://hariniharidass.github.io/hariniPortfolio/images/me.png" />
+    <meta property="og:image:alt" content="Harini Natarajan" />
+    <meta name="theme-color" content="#101c2e" />
+    <script>
+      try {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
+      } catch { /* Use the default light theme when storage is unavailable. */ }
+    </script>
+    <title>Harini Natarajan | Fullstack Software Developer</title>
   </head>
   <body>
     <div id="root"></div>

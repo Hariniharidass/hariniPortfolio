@@ -1,9 +1,32 @@
 import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import Search from "../components/Search";
-import ParticlesBackground from "../components/ParticlesBackground";
 function Projects() {
   const initialProjectsArray = [
+    {
+      projectName: "Dockerized Multi-Calculator Microservice",
+      repoLink: "https://github.com/Hariniharidass/Simple_Python_Microservices",
+      date: "May 2026 – June 2026",
+      techUsed: ["all", "Python", "FastAPI", "Docker", "Docker Compose", "Pydantic", "unittest"],
+      description: "Developed a containerized REST API for mathematical calculations and loan amortization, incorporating data validation, error handling, middleware, structured logging, and automated testing.",
+      details: ["Asynchronous REST API endpoints for mathematical calculations and loan amortization.", "Docker and Docker Compose configuration.", "Pydantic request and response validation.", "CORS middleware and request timeout protection.", "Structured logging.", "Unit and integration tests using Python unittest."],
+    },
+    {
+      projectName: "Körklart — Swedish Driving License Guide",
+      category: "Mobile application",
+      repoLink: "https://github.com/Hariniharidass/Korklart-app",
+      techUsed: ["all", "TypeScript", "React Native", "Expo", "AsyncStorage"],
+      description: "A mobile guide to the Swedish driving-license process, with a step-by-step checklist, saved progress, and remaining-cost estimates.",
+      details: ["Mark individual steps as complete and save progress locally with AsyncStorage.", "Calculate remaining fixed and estimated variable costs from incomplete steps.", "Open official resources from each checklist step."],
+    },
+    {
+      projectName: "Shopping Cart — Express & MongoDB",
+      category: "Fullstack web application",
+      repoLink: "https://github.com/Hariniharidass/Shopping-cart-ExpressJS-Mongodb",
+      techUsed: ["all", "JavaScript", "Node.js", "Express.js", "MongoDB", "Handlebars"],
+      description: "A server-rendered shopping application using Express, Handlebars, and MongoDB, with product search, a session-based cart, and order storage.",
+      details: ["Search the product catalog and adjust or remove cart items.", "Add and update products with image uploads.", "Use login-protected checkout and save orders in MongoDB."],
+    },
     {
       projectName: "Cookie Clicker",
       liveLink: "https://hariniharidass.github.io/CookieClicker/",
@@ -60,14 +83,20 @@ function Projects() {
   };
 
   return (
-    <div className="mt-30 flex justify-center items-center flex-col relative overflow-hidden min-h-screen">
-      <ParticlesBackground />
+    <div className="page-shell">
+      <header className="page-heading">
+      <p className="eyebrow">Selected work</p>
+      <h1>Projects</h1>
+      <p className="page-intro">From interactive frontend applications to containerized backend APIs.</p>
+      </header>
       <Search projects={initialProjectsArray} onSearch={handleSearch} />
 
-      <div>
-        {filteredProjects.map((project, index) => (
+      <div className="project-grid">
+        {filteredProjects.map((project) => (
           <ProjectCard
-            key={index}
+            key={project.projectName}
+            date={project.date}
+            category={project.category}
             projectName={project.projectName}
             repoLink={project.repoLink}
             liveLink={project.liveLink}
@@ -77,6 +106,7 @@ function Projects() {
           />
         ))}
       </div>
+      <p role="status" className="muted">{filteredProjects.length} {filteredProjects.length === 1 ? "project" : "projects"} found</p>
     </div>
   );
 }

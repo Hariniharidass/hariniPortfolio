@@ -1,106 +1,16 @@
-import { DiHtml5, DiCss3 } from "react-icons/di";
-import { DiSass, DiGithubBadge } from "react-icons/di";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { IoLogoJavascript } from "react-icons/io";
-import { FaReact } from "react-icons/fa";
-const techIconMap = {
-  HTML: <DiHtml5 size="30px" color="#ff5733" />,
-  CSS: <DiCss3 size="30px" color="#2965f1" />,
-  SASS: <DiSass size="30px" color=" #CD6799" />,
-  JAVASCRIPT: <IoLogoJavascript size="30px" color=" #000000" />,
-  TAILWIND: <RiTailwindCssFill size="30px" color=" #06B6D4" />,
-  REACT: <FaReact size="30px" color=" #61DAFB" />,
-  GITHUB: <DiGithubBadge size="30px" color="#000000" />,
-};
-
-function Card(props) {
-  const techIcons = props.techUsed ? (
-    <div className="flex flex-row items-center ml-1.5 ">
-      {props.techUsed.map((tech, index) => (
-        <span className="m-2 p-1 rounded-3xl" key={index}>
-          {techIconMap[tech] || null}
-        </span>
-      ))}
-    </div>
-  ) : null;
-
+function ProjectCard({ projectName, date, category, techUsed = [], description, details = [], repoLink, liveLink }) {
   return (
-    <div className="m-3 text-text-primary">
-      <div className="flex flex-col justify-start items-center w-full ">
-        <details className="w-full m-4 border-2 border-accent-secondary rounded-lg shadow-lg bg-background-secondary overflow-hidden">
-          <summary className=" lg:text-xl text-lg font-bold cursor-pointer py-4 bg-background-primary w-full  flex items-center text-center border-b-4 border-accent-secondary ">
-            <span className="flex-grow text-center">{props.projectName}</span>
-          </summary>
-          <div className="md:grid md:grid-cols-3 place-items-center flex flex-col items-center">
-            <div className="inline-grid">
-              {props.repoLink && (
-                <div className="lg:text-2xl text-lg mt-6">
-                  <a
-                    href={props.repoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-black-600 hover:text-accent-primary"
-                  >
-                    GitHub Repository{" "}
-                    <DiGithubBadge
-                      size="40px"
-                      className="ml-2 inline text-black"
-                    />{" "}
-                  </a>
-                </div>
-              )}
-            </div>
-            <div className="inline mt-6">
-              <div className="lg:text-2xl text-lg">
-                <a
-                  href={props.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-black-600 hover:text-accent-primary"
-                >
-                  Live Demo{" "}
-                </a>
-              </div>
-            </div>
-            <div className="inline mt-6">
-              {techIcons && (
-                <div className=" lg:text-2xl  text-lg flex items-center justify-center ">
-                  Tech: {techIcons}
-                </div>
-              )}
-            </div>
-            <div className="col-span-3">
-              {props.description && (
-                <div className="mt-4 text-center">
-                  <p className="font-semibold lg:text-lg text-base text-accent-primary">
-                    Description:
-                  </p>
-                  <p className="mt-2 lg:text-lg text-base">
-                    {" "}
-                    {props.description}
-                  </p>
-                </div>
-              )}
-            </div>
-            <div className="col-span-3">
-              {props.details && props.details.length > 0 && (
-                <div className="mt-4 text-center my-3">
-                  <p className="font-semibold lg:text-l text-base text-accent-primary">
-                    Key Details:
-                  </p>
-                  <ul className="list-disc list-inside ml-4 mt-2 lg:text-lg text-base">
-                    {props.details.map((detail, index) => (
-                      <li key={index}>{detail}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </div>
-        </details>
+    <article className="project-card">
+      <p className="eyebrow">{date || category || "Frontend project"}</p>
+      <h2>{projectName}</h2>
+      <p>{description}</p>
+      <p className="project-stack">{techUsed.filter((tech) => tech !== "all").join(" · ")}</p>
+      {details.length > 0 && <details><summary>Project details</summary><ul>{details.map((detail) => <li key={detail}>{detail}</li>)}</ul></details>}
+      <div className="social-links">
+        {repoLink && <a href={repoLink} target="_blank" rel="noopener noreferrer" aria-label={`${projectName} GitHub repository`}>GitHub ↗</a>}
+        {liveLink && <a href={liveLink} target="_blank" rel="noopener noreferrer" aria-label={`${projectName} live demo`}>Live demo ↗</a>}
       </div>
-    </div>
+    </article>
   );
 }
-
-export default Card;
+export default ProjectCard;

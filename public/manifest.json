@@ -1,0 +1,21 @@
+{
+  "name": "Harini Natarajan | Fullstack Software Developer",
+  "short_name": "Harini",
+  "start_url": "/hariniPortfolio/",
+  "scope": "/hariniPortfolio/",
+  "display": "standalone",
+  "background_color": "#fafaf7",
+  "theme_color": "#101c2e",
+  "icons": [
+    {
+      "src": "images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
